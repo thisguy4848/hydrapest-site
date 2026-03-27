@@ -13,6 +13,21 @@ interface Pest {
   signs: string[];
 }
 
+const pestSlugs: Record<string, string> = {
+  Scorpions: "scorpions",
+  Termites: "termites",
+  Mosquitoes: "mosquitoes",
+  Wasps: "wasps",
+  Bees: "bees",
+  Roaches: "roaches",
+  "Bed Bugs": "bed-bugs",
+  Spiders: "spiders",
+  Ants: "ants",
+  Rodents: "rodents",
+  Ticks: "ticks",
+  "Pocket Gophers": "pocket-gophers",
+};
+
 const pests: Pest[] = [
   {
     name: "Scorpions",
@@ -198,7 +213,9 @@ export default function PestLibrary() {
             Pest Library
           </h2>
           <p className="mt-4 text-gray-400 text-lg">
-            Tap any pest to learn warning signs and how we eliminate them.
+            Tap any pest for a quick overview, or explore our{" "}
+            <span className="text-hydra-cyan">full pest guides</span> for
+            detailed information.
           </p>
         </div>
 
@@ -281,13 +298,23 @@ export default function PestLibrary() {
                 </ul>
               </div>
 
-              <Link
-                href="/#contact"
-                onClick={() => setSelected(null)}
-                className="mt-8 w-full inline-flex items-center justify-center gap-2 bg-hydra-cyan hover:bg-hydra-teal text-hydra-dark font-bold px-6 py-3 rounded-full transition-all glow-cyan"
-              >
-                Get Help With {selected.name}
-              </Link>
+              <div className="mt-8 flex flex-col gap-3">
+                <Link
+                  href="/#contact"
+                  onClick={() => setSelected(null)}
+                  className="w-full inline-flex items-center justify-center gap-2 bg-hydra-cyan hover:bg-hydra-teal text-hydra-dark font-bold px-6 py-3 rounded-full transition-all glow-cyan"
+                >
+                  Get Help With {selected.name}
+                </Link>
+                <Link
+                  href={`/pests/${pestSlugs[selected.name] || selected.name.toLowerCase()}`}
+                  onClick={() => setSelected(null)}
+                  className="w-full inline-flex items-center justify-center gap-2 text-hydra-cyan hover:text-white font-semibold text-sm transition-colors"
+                >
+                  Learn More About {selected.name}
+                  <ChevronRight className="w-4 h-4" />
+                </Link>
+              </div>
             </div>
           </div>
         )}

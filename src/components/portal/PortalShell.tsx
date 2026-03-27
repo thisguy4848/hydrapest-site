@@ -56,7 +56,7 @@ export default function PortalShell({ children }: { children: React.ReactNode })
 
       {/* Sidebar */}
       <aside
-        className={`fixed lg:sticky top-0 left-0 z-50 h-screen w-64 bg-hydra-dark flex flex-col transition-transform duration-200 ${
+        className={`fixed lg:sticky top-0 left-0 z-50 h-screen w-64 shrink-0 bg-hydra-dark flex flex-col transition-transform duration-200 ${
           sidebarOpen ? "translate-x-0" : "-translate-x-full lg:translate-x-0"
         }`}
       >
@@ -129,7 +129,7 @@ export default function PortalShell({ children }: { children: React.ReactNode })
       </aside>
 
       {/* Main content */}
-      <div className="flex-1 flex flex-col min-h-screen">
+      <div className="flex-1 flex flex-col min-h-screen min-w-0">
         {/* Top bar (mobile) */}
         <header className="lg:hidden bg-hydra-dark border-b border-white/5 px-4 py-3 flex items-center justify-between sticky top-0 z-30">
           <button
