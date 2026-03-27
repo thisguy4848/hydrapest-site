@@ -94,15 +94,23 @@ export default function Header() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="flex items-center justify-between h-16 sm:h-20">
             {/* Logo */}
-            <Link href="/" className="flex items-center shrink-0">
+            <Link href="/" className="flex items-center gap-2.5 shrink-0">
               <Image
-                src="/images/hydra-logo.jpg"
-                alt="Hydra Pest Control logo"
-                width={180}
-                height={60}
-                className="h-10 sm:h-12 w-auto"
+                src="/images/hydra-icon.png"
+                alt="Hydra Pest Control"
+                width={44}
+                height={44}
+                className="w-9 h-9 sm:w-11 sm:h-11"
                 priority
               />
+              <div className="hidden sm:block">
+                <span className="font-[var(--font-heading)] font-bold text-hydra-dark text-xl tracking-wider uppercase leading-none">
+                  Hydra
+                </span>
+                <span className="block text-[9px] uppercase tracking-[0.25em] text-hydra-gray -mt-0.5 font-medium">
+                  Pest Control
+                </span>
+              </div>
             </Link>
 
             {/* Desktop nav */}

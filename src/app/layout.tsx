@@ -23,8 +23,8 @@ export const metadata: Metadata = {
   keywords:
     "pest control Arizona, scorpion control, termite treatment, mosquito control, Safford pest control, Show Low pest control, Sierra Vista pest control",
   icons: {
-    icon: "/images/favicon-full.png",
-    apple: "/images/favicon-full.png",
+    icon: "/images/hydra-icon.png",
+    apple: "/images/hydra-icon.png",
   },
   openGraph: {
     title: "Hydra Pest Control | Premium Pest Control in Arizona",

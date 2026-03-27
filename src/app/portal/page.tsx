@@ -40,14 +40,24 @@ export default function PortalLoginPage() {
       <div className="texture-dots absolute inset-0 pointer-events-none" />
       <div className="w-full max-w-md relative z-10">
         <div className="flex justify-center mb-8">
-          <Image
-            src="/images/hydra-logo.jpg"
-            alt="Hydra Pest Control"
-            width={180}
-            height={60}
-            className="rounded-lg"
-            priority
-          />
+          <div className="flex flex-col items-center gap-3">
+            <Image
+              src="/images/hydra-icon.png"
+              alt="Hydra Pest Control"
+              width={80}
+              height={80}
+              className="w-20 h-20"
+              priority
+            />
+            <div className="text-center">
+              <span className="font-[var(--font-heading)] font-bold text-white text-2xl tracking-wider uppercase block">
+                Hydra
+              </span>
+              <span className="text-[10px] uppercase tracking-[0.3em] text-hydra-gray font-medium">
+                Pest Control
+              </span>
+            </div>
+          </div>
         </div>
 
         <div className="bg-hydra-navy border border-hydra-slate/50 rounded-2xl p-8 shadow-2xl">

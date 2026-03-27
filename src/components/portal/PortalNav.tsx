@@ -65,7 +65,7 @@ export default function PortalNav() {
     <>
       <div className="px-4 pt-6 pb-4">
         <Image
-          src="/images/hydra-logo.jpg"
+          src="/images/hydra-icon.png"
           alt="Hydra Pest Control"
           width={140}
           height={46}
@@ -140,7 +140,7 @@ export default function PortalNav() {
       {/* Mobile header */}
       <div className="lg:hidden fixed top-0 inset-x-0 z-50 bg-hydra-dark border-b border-hydra-slate/30 px-4 py-3 flex items-center justify-between">
         <Image
-          src="/images/hydra-logo.jpg"
+          src="/images/hydra-icon.png"
           alt="Hydra Pest Control"
           width={110}
           height={36}
