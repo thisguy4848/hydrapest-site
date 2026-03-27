@@ -44,6 +44,13 @@ export async function generateMetadata({
       description: pest.description,
       type: "article",
       url: `https://www.hydrapest.com/pests/${pest.slug}`,
+      images: [{ url: "/images/truck-branded.jpg", width: 1200, height: 630 }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${pest.name} Control in Arizona | Hydra Pest Control`,
+      description: pest.description,
+      images: ["/images/truck-branded.jpg"],
     },
   };
 }

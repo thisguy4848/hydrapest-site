@@ -76,7 +76,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href="/#services"
+                  href="/pests/termites"
                   className="hover:text-hydra-cyan transition-colors"
                 >
                   Termite Treatment
@@ -84,7 +84,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href="/#services"
+                  href="/pests/scorpions"
                   className="hover:text-hydra-cyan transition-colors"
                 >
                   Scorpion Control
@@ -92,7 +92,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href="/#services"
+                  href="/pests/mosquitoes"
                   className="hover:text-hydra-cyan transition-colors"
                 >
                   Mosquito Control
@@ -100,7 +100,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href="/#services"
+                  href="/pests/bed-bugs"
                   className="hover:text-hydra-cyan transition-colors"
                 >
                   Bed Bug Treatment

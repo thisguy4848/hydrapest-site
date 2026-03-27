@@ -3,17 +3,27 @@ import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { getAllPosts, getCategories } from "@/lib/blog-data";
+import MobileCallBar from "@/components/MobileCallBar";
 import { Calendar, Clock, ArrowRight, BookOpen } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Pest Control Blog | Hydra Pest Control Arizona",
   description:
     "Expert pest control tips, prevention guides, and Arizona-specific pest information from Hydra Pest Control. Scorpions, termites, mosquitoes, bed bugs & more.",
+  alternates: { canonical: "/blog" },
   openGraph: {
     title: "Pest Control Blog | Hydra Pest Control Arizona",
     description:
       "Expert pest control tips and prevention guides for Arizona homeowners.",
     type: "website",
+    url: "https://www.hydrapest.com/blog",
+    images: [{ url: "/images/truck-branded.jpg", width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Pest Control Blog | Hydra Pest Control Arizona",
+    description: "Expert pest control advice for Arizona homeowners.",
+    images: ["/images/truck-branded.jpg"],
   },
 };
 
@@ -170,6 +180,7 @@ export default function BlogPage() {
         </section>
       </main>
       <Footer />
+      <MobileCallBar />
     </>
   );
 }

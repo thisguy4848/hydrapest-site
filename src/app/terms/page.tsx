@@ -8,6 +8,16 @@ export const metadata: Metadata = {
   description:
     "Hydra Pest Control terms of service. Terms and conditions for using our services and website.",
   alternates: { canonical: "/terms" },
+  openGraph: {
+    title: "Terms of Service | Hydra Pest Control",
+    description: "Terms and conditions for Hydra Pest Control services and website.",
+    type: "website",
+  },
+  twitter: {
+    card: "summary",
+    title: "Terms of Service | Hydra Pest Control",
+    description: "Terms and conditions for our services.",
+  },
 };
 
 export default function TermsPage() {

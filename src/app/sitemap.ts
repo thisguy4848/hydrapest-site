@@ -22,6 +22,8 @@ export default function sitemap() {
       changeFrequency: "monthly" as const,
       priority: 0.6,
     })),
+    { url: `${baseUrl}/privacy`, lastModified: new Date(), changeFrequency: "yearly" as const, priority: 0.3 },
+    { url: `${baseUrl}/terms`, lastModified: new Date(), changeFrequency: "yearly" as const, priority: 0.3 },
     ...cities.map((city) => ({
       url: `${baseUrl}/${city.slug}`,
       lastModified: new Date(),

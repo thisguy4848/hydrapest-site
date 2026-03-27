@@ -8,6 +8,7 @@ import {
   getPostBySlug,
   getRelatedPosts,
 } from "@/lib/blog-data";
+import MobileCallBar from "@/components/MobileCallBar";
 import {
   Calendar,
   Clock,
@@ -35,12 +36,21 @@ export async function generateMetadata({
   return {
     title: `${post.title} | Hydra Pest Control Blog`,
     description: post.excerpt,
+    alternates: { canonical: `/blog/${slug}` },
     openGraph: {
       title: post.title,
       description: post.excerpt,
       type: "article",
       publishedTime: post.date,
       authors: [post.author],
+      url: `https://www.hydrapest.com/blog/${slug}`,
+      images: [{ url: "/images/truck-branded.jpg", width: 1200, height: 630 }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${post.title} | Hydra Pest Control`,
+      description: post.excerpt,
+      images: ["/images/truck-branded.jpg"],
     },
   };
 }
@@ -316,6 +326,7 @@ export default async function BlogPostPage({
         </section>
       </main>
       <Footer />
+      <MobileCallBar />
     </>
   );
 }

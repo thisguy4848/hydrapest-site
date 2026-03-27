@@ -57,6 +57,30 @@ export async function generateMetadata({
   };
 }
 
+const pestSlugMap: Record<string, string> = {
+  "Bark Scorpions": "scorpions",
+  "Subterranean Termites": "termites",
+  "Black Widows": "spiders",
+  "Mosquitoes": "mosquitoes",
+  "Roof Rats": "rodents",
+  "Pack Rats": "rodents",
+  "Africanized Bees": "bees",
+  "Paper Wasps": "wasps",
+  "German Cockroaches": "roaches",
+  "Carpenter Ants": "ants",
+  "Fire Ants": "ants",
+  "Harvester Ants": "ants",
+  "Brown Dog Ticks": "ticks",
+  "Wolf Spiders": "spiders",
+  "Mice": "rodents",
+  "Pocket Gophers": "pocket-gophers",
+  "Bed Bugs": "bed-bugs",
+  "Kissing Bugs": "roaches",
+  "Brown Recluse Spiders": "spiders",
+  "Centipedes": "scorpions",
+  "Desert Hairy Scorpions": "scorpions",
+};
+
 const pestDescriptions: Record<string, string> = {
   "Bark Scorpions": "Arizona's most venomous scorpion. Hides in shoes, bedding, and wall voids. Professional perimeter treatments create a lethal barrier.",
   "Subterranean Termites": "Colony-based wood destroyers that tunnel through soil to reach your home's foundation. Cause billions in U.S. damage annually.",
@@ -350,27 +374,36 @@ export default async function CityPage({
               </p>
             </div>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-              {city.topPests.map((pest, i) => (
-                <div
-                  key={pest}
-                  className="bg-hydra-light rounded-2xl p-6 border border-hydra-light hover:border-hydra-cyan/30 transition-all hover:shadow-lg hover:shadow-hydra-cyan/5"
-                >
-                  <div className="flex items-center gap-3 mb-3">
-                    <div className="w-9 h-9 rounded-lg bg-hydra-dark flex items-center justify-center">
-                      <Bug className="w-4 h-4 text-hydra-cyan" />
+              {city.topPests.map((pest, i) => {
+                const slug = pestSlugMap[pest];
+                const card = (
+                  <div
+                    className="bg-hydra-light rounded-2xl p-6 border border-hydra-light hover:border-hydra-cyan/30 transition-all hover:shadow-lg hover:shadow-hydra-cyan/5"
+                  >
+                    <div className="flex items-center gap-3 mb-3">
+                      <div className="w-9 h-9 rounded-lg bg-hydra-dark flex items-center justify-center">
+                        <Bug className="w-4 h-4 text-hydra-cyan" />
+                      </div>
+                      <div>
+                        <span className="text-xs text-hydra-teal font-semibold">#{i + 1} in {city.name}</span>
+                        <h3 className="font-[var(--font-heading)] text-base font-bold uppercase text-hydra-dark leading-tight">
+                          {pest}
+                        </h3>
+                      </div>
                     </div>
-                    <div>
-                      <span className="text-xs text-hydra-teal font-semibold">#{i + 1} in {city.name}</span>
-                      <h3 className="font-[var(--font-heading)] text-base font-bold uppercase text-hydra-dark leading-tight">
-                        {pest}
-                      </h3>
-                    </div>
+                    <p className="text-sm text-hydra-gray leading-relaxed">
+                      {pestDescriptions[pest] || "Professional treatment recommended for effective control."}
+                    </p>
                   </div>
-                  <p className="text-sm text-hydra-gray leading-relaxed">
-                    {pestDescriptions[pest] || "Professional treatment recommended for effective control."}
-                  </p>
-                </div>
-              ))}
+                );
+                return slug ? (
+                  <Link key={pest} href={`/pests/${slug}`}>
+                    {card}
+                  </Link>
+                ) : (
+                  <div key={pest}>{card}</div>
+                );
+              })}
             </div>
           </div>
         </section>
@@ -431,6 +464,22 @@ export default async function CityPage({
                     <p className="text-hydra-gray leading-relaxed">{faq.answer}</p>
                   </div>
                 </details>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ───── NEARBY SERVICE AREAS ───── */}
+        <section className="py-12 bg-hydra-light">
+          <div className="max-w-5xl mx-auto px-4 sm:px-6">
+            <h2 className="font-[var(--font-heading)] text-xl font-bold uppercase text-hydra-dark mb-4">
+              Nearby Service Areas
+            </h2>
+            <div className="flex flex-wrap gap-2">
+              {cities.filter(c => c.region === city.region && c.slug !== city.slug).map(c => (
+                <Link key={c.slug} href={`/${c.slug}`} className="text-sm bg-white text-hydra-navy px-4 py-2 rounded-full hover:bg-hydra-cyan/20 hover:text-hydra-teal transition-colors border border-hydra-light">
+                  Pest Control in {c.name}
+                </Link>
               ))}
             </div>
           </div>
