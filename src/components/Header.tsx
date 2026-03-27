@@ -17,9 +17,9 @@ import {
 
 const navLinks = [
   { href: "/#services", label: "Services", icon: Bug },
-  { href: "/#pest-library", label: "Pest Library", icon: Bug },
+  { href: "/pests", label: "Pest Library", icon: Bug },
   { href: "/#about", label: "About", icon: Users },
-  { href: "/#areas", label: "Service Areas", icon: MapPin },
+  { href: "/service-areas", label: "Service Areas", icon: MapPin },
   { href: "/blog", label: "Blog", icon: MessageSquare },
   { href: "/#contact", label: "Contact", icon: MessageSquare },
 ];

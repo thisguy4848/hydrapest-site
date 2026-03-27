@@ -108,6 +108,22 @@ export default function Footer() {
               </li>
               <li>
                 <Link
+                  href="/pests"
+                  className="hover:text-hydra-cyan transition-colors"
+                >
+                  Pest Library
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/service-areas"
+                  className="hover:text-hydra-cyan transition-colors"
+                >
+                  Service Areas
+                </Link>
+              </li>
+              <li>
+                <Link
                   href="/blog"
                   className="hover:text-hydra-cyan transition-colors"
                 >

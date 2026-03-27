@@ -10,6 +10,8 @@ export default function sitemap() {
   return [
     { url: baseUrl, lastModified: new Date(), changeFrequency: "weekly" as const, priority: 1 },
     { url: `${baseUrl}/blog`, lastModified: new Date(), changeFrequency: "weekly" as const, priority: 0.8 },
+    { url: `${baseUrl}/pests`, lastModified: new Date(), changeFrequency: "weekly" as const, priority: 0.9 },
+    { url: `${baseUrl}/service-areas`, lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.9 },
     ...pestSlugs.map((slug) => ({
       url: `${baseUrl}/pests/${slug}`,
       lastModified: new Date(),
