@@ -156,12 +156,12 @@ export default function PestsPage() {
                     </span>
                     <div className="flex flex-col items-end gap-1.5">
                       <span
-                        className={`text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full border ${dangerColors[pest.dangerLevel]}`}
+                        className={`text-xs font-bold uppercase tracking-wider px-2 py-0.5 rounded-full border ${dangerColors[pest.dangerLevel]}`}
                       >
                         {pest.dangerLevel} Risk
                       </span>
                       <span
-                        className={`text-[10px] font-semibold uppercase tracking-wider px-2 py-0.5 rounded-full ${categoryColors[pest.category]}`}
+                        className={`text-xs font-semibold uppercase tracking-wider px-2 py-0.5 rounded-full ${categoryColors[pest.category]}`}
                       >
                         {categoryLabels[pest.category]}
                       </span>

@@ -95,7 +95,7 @@ export default function PortalShell({ children }: { children: React.ReactNode })
                 key={item.href}
                 href={item.href}
                 onClick={() => setSidebarOpen(false)}
-                className={`flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-all ${
+                className={`flex items-center gap-3 px-3 py-3 rounded-lg text-sm font-medium transition-all ${
                   active
                     ? "bg-hydra-cyan/10 text-hydra-cyan"
                     : "text-hydra-gray hover:text-white hover:bg-white/5"
@@ -128,7 +128,7 @@ export default function PortalShell({ children }: { children: React.ReactNode })
           </div>
           <button
             onClick={handleLogout}
-            className="flex items-center gap-2 w-full px-3 py-2 mt-1 text-sm text-hydra-gray hover:text-red-400 rounded-lg hover:bg-white/5 transition-colors"
+            className="flex items-center gap-2 w-full px-3 py-3 mt-1 text-sm text-hydra-gray hover:text-red-400 rounded-lg hover:bg-white/5 transition-colors"
           >
             <LogOut className="w-4 h-4" />
             Sign Out

@@ -477,7 +477,7 @@ export default async function CityPage({
             </h2>
             <div className="flex flex-wrap gap-2">
               {cities.filter(c => c.region === city.region && c.slug !== city.slug).map(c => (
-                <Link key={c.slug} href={`/${c.slug}`} className="text-sm bg-white text-hydra-navy px-4 py-2 rounded-full hover:bg-hydra-cyan/20 hover:text-hydra-teal transition-colors border border-hydra-light">
+                <Link key={c.slug} href={`/${c.slug}`} className="text-sm bg-white text-hydra-navy px-4 py-2.5 rounded-full hover:bg-hydra-cyan/20 hover:text-hydra-teal transition-colors border border-hydra-light">
                   Pest Control in {c.name}
                 </Link>
               ))}

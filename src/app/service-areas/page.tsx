@@ -194,7 +194,7 @@ export default function ServiceAreasPage() {
                         {city.topPests.slice(0, 3).map((pest) => (
                           <span
                             key={pest}
-                            className="text-[10px] font-medium text-hydra-navy bg-hydra-mint/60 px-2 py-0.5 rounded-full"
+                            className="text-xs font-medium text-hydra-navy bg-hydra-mint/60 px-2 py-0.5 rounded-full"
                           >
                             {pest}
                           </span>

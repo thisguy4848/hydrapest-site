@@ -94,7 +94,7 @@ export default function Header() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="flex items-center justify-between h-16 sm:h-20">
             {/* Logo */}
-            <Link href="/" className="flex items-center gap-2.5 shrink-0">
+            <Link href="/" className="flex items-center gap-2.5 shrink-0 min-h-[44px] min-w-[44px]">
               <Image
                 src="/images/hydra-icon.png"
                 alt="Hydra Pest Control"
@@ -140,7 +140,7 @@ export default function Header() {
 
               <Link
                 href="/#contact"
-                className="bg-hydra-cyan hover:bg-hydra-teal text-hydra-dark font-semibold text-sm px-5 py-2.5 rounded-full transition-all duration-200 glow-cyan hover:scale-105"
+                className="bg-hydra-cyan hover:bg-hydra-teal text-hydra-dark font-semibold text-sm px-5 py-3 min-h-[44px] rounded-full transition-all duration-200 glow-cyan hover:scale-105"
               >
                 Free Quote
               </Link>
@@ -148,7 +148,7 @@ export default function Header() {
               {/* Mobile menu toggle */}
               <button
                 onClick={() => setIsOpen(!isOpen)}
-                className="lg:hidden p-2 rounded-lg hover:bg-hydra-light transition-colors"
+                className="lg:hidden p-2.5 rounded-lg hover:bg-hydra-light transition-colors"
                 aria-label="Toggle menu"
               >
                 {isOpen ? (

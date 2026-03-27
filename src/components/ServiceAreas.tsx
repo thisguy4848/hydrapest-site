@@ -126,14 +126,14 @@ export default function ServiceAreas() {
                       <Link
                         key={city}
                         href={citySlugMap[city]}
-                        className="text-xs bg-hydra-light text-hydra-navy px-2.5 py-1 rounded-full hover:bg-hydra-cyan/20 hover:text-hydra-teal transition-colors"
+                        className="text-xs bg-hydra-light text-hydra-navy px-3 py-1.5 rounded-full hover:bg-hydra-cyan/20 hover:text-hydra-teal transition-colors"
                       >
                         {city}
                       </Link>
                     ) : (
                       <span
                         key={city}
-                        className="text-xs bg-hydra-light text-hydra-navy px-2.5 py-1 rounded-full"
+                        className="text-xs bg-hydra-light text-hydra-navy px-3 py-1.5 rounded-full"
                       >
                         {city}
                       </span>
