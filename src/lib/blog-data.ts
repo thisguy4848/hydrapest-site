@@ -29,7 +29,7 @@ export const blogPosts: BlogPost[] = [
 <p>Two primary species cause problems in Arizona homes:</p>
 
 <ul>
-<li><strong>Subterranean termites</strong> live in underground colonies and build mud tubes to reach wood above ground. They are the most destructive termite species in the state and are responsible for the vast majority of damage claims.</li>
+<li><strong><a href="/pests/termites">Subterranean termites</a></strong> live in underground colonies and build mud tubes to reach wood above ground. They are the most destructive termite species in the state and are responsible for the vast majority of damage claims.</li>
 <li><strong>Drywood termites</strong> do not need soil contact. They colonize directly inside wood framing, furniture, and structural members. Infestations are slower but can go undetected for years.</li>
 </ul>
 
@@ -45,7 +45,7 @@ export const blogPosts: BlogPost[] = [
 
 <p>Termite swarmers are winged reproductives that emerge in large numbers, usually after rain. In Arizona, you might see them clustering around exterior lights at night or near windows during the day. After mating, they shed their wings.</p>
 
-<p>Finding piles of tiny, translucent wings on windowsills, near light fixtures, or along the base of exterior walls is one of the clearest signs that a mature colony exists nearby. Many homeowners mistake swarmers for flying ants. The key difference: termite swarmers have straight antennae, uniform waists, and wings of equal length. Flying ants have elbowed antennae, pinched waists, and uneven wings.</p>
+<p>Finding piles of tiny, translucent wings on windowsills, near light fixtures, or along the base of exterior walls is one of the clearest signs that a mature colony exists nearby. Many homeowners mistake swarmers for flying ants. The key difference: termite swarmers have straight antennae, uniform waists, and wings of equal length. <a href="/pests/ants">Flying ants</a> have elbowed antennae, pinched waists, and uneven wings.</p>
 
 <h2>Warning Sign #3: Hollow-Sounding Wood</h2>
 
@@ -108,7 +108,7 @@ export const blogPosts: BlogPost[] = [
     readTime: "8 min read",
     author: "Hydra Pest Control Team",
     content: `
-<p>If you live in Arizona, you will encounter scorpions. It is not a question of luck but geography. Arizona is home to over 40 scorpion species, and the most medically significant one in the entire United States, the Arizona bark scorpion, is found throughout the state. Understanding scorpion behavior, knowing when they are most active, and taking proactive steps to seal your home can make the difference between a peaceful summer and a stressful one.</p>
+<p>If you live in Arizona, you will encounter scorpions. It is not a question of luck but geography. Arizona is home to over 40 scorpion species, and the most medically significant one in the entire United States, the <a href="/pests/scorpions">Arizona bark scorpion</a>, is found throughout the state. Understanding scorpion behavior, knowing when they are most active, and taking proactive steps to seal your home can make the difference between a peaceful summer and a stressful one.</p>
 
 <h2>When Is Scorpion Season in Arizona?</h2>
 
@@ -143,7 +143,7 @@ export const blogPosts: BlogPost[] = [
 <p>Not every scorpion you find is a bark scorpion. Other species you may encounter include:</p>
 
 <ul>
-<li><strong>Giant desert hairy scorpion:</strong> The largest scorpion in North America at up to 6 inches. Dark body with yellow legs and pincers. Despite its intimidating size, its sting is comparable to a bee sting.</li>
+<li><strong>Giant desert hairy scorpion:</strong> The largest scorpion in North America at up to 6 inches. Dark body with yellow legs and pincers. Despite its intimidating size, its sting is comparable to a <a href="/pests/bees">bee</a> sting.</li>
 <li><strong>Stripe-tailed scorpion:</strong> Stocky, 2-3 inches, with dark stripes on the underside of its tail. Common in rocky desert areas. Sting is painful but not medically significant.</li>
 <li><strong>Yellow ground scorpion:</strong> Small, pale yellow, often confused with bark scorpions. Found in sandy soil areas. Mild sting.</li>
 </ul>
@@ -229,9 +229,9 @@ export const blogPosts: BlogPost[] = [
 <p>Most DIY products only kill pests on contact or in the immediate area of application. They do not address the colony, nest, or breeding site that is producing new pests. For example:</p>
 
 <ul>
-<li><strong>Cockroaches:</strong> Spraying visible roaches kills those individuals but can scatter the colony deeper into walls, making the problem harder to treat later.</li>
+<li><strong><a href="/pests/roaches">Cockroaches</a>:</strong> Spraying visible roaches kills those individuals but can scatter the colony deeper into walls, making the problem harder to treat later.</li>
 <li><strong>Ants:</strong> Killing forager ants at the trail does nothing to the queen and colony, which can number in the tens of thousands.</li>
-<li><strong>Rodents:</strong> Snap traps catch individual mice, but if you are catching multiple mice per week, there is a breeding population you are not addressing.</li>
+<li><strong><a href="/pests/rodents">Rodents</a>:</strong> Snap traps catch individual mice, but if you are catching multiple mice per week, there is a breeding population you are not addressing.</li>
 </ul>
 
 <p>A professional identifies the species, locates the source of the infestation, and applies targeted treatments that eliminate the entire population, not just the visible ones.</p>
@@ -254,7 +254,7 @@ export const blogPosts: BlogPost[] = [
 <p>Some pests carry real health risks that make DIY treatment dangerous. In Arizona, this list includes:</p>
 
 <ul>
-<li><strong>Scorpions</strong> (especially Arizona bark scorpions, whose stings can be medically serious)</li>
+<li><strong><a href="/pests/scorpions">Scorpions</a></strong> (especially Arizona bark scorpions, whose stings can be medically serious)</li>
 <li><strong>Black widows</strong> and <strong>brown recluse spiders</strong></li>
 <li><strong>Africanized bees</strong> (extremely defensive and aggressive when disturbed)</li>
 <li><strong>Wasps and hornets</strong> nesting near living areas</li>
@@ -264,7 +264,7 @@ export const blogPosts: BlogPost[] = [
 
 <h2>4. You Have a Bed Bug Infestation</h2>
 
-<p>Bed bugs deserve their own category because they are arguably the single hardest common pest to eliminate without professional help. Here is why DIY fails:</p>
+<p><a href="/pests/bed-bugs">Bed bugs</a> deserve their own category because they are arguably the single hardest common pest to eliminate without professional help. Here is why DIY fails:</p>
 
 <ul>
 <li>Bed bugs hide in mattress seams, box springs, headboards, baseboards, electrical outlets, and even behind wallpaper. They are extremely difficult to reach with surface sprays.</li>
@@ -313,7 +313,7 @@ export const blogPosts: BlogPost[] = [
     readTime: "7 min read",
     author: "Hydra Pest Control Team",
     content: `
-<p>Most people associate mosquitoes with humid, tropical climates, not the Arizona desert. But anyone who has lived through an Arizona monsoon season knows better. From late June through September, monsoon storms create standing water throughout the landscape, and mosquito populations explode within days. Arizona mosquitoes are not just annoying. They carry diseases including West Nile virus, St. Louis encephalitis, and, in recent years, Zika virus has been a concern.</p>
+<p>Most people associate <a href="/pests/mosquitoes">mosquitoes</a> with humid, tropical climates, not the Arizona desert. But anyone who has lived through an Arizona monsoon season knows better. From late June through September, monsoon storms create standing water throughout the landscape, and mosquito populations explode within days. Arizona mosquitoes are not just annoying. They carry diseases including West Nile virus, St. Louis encephalitis, and, in recent years, Zika virus has been a concern.</p>
 
 <p>Here is how to protect your family and property during Arizona's mosquito season.</p>
 
@@ -406,7 +406,7 @@ export const blogPosts: BlogPost[] = [
     readTime: "8 min read",
     author: "Hydra Pest Control Team",
     content: `
-<p>In the restaurant business, a single pest sighting can undo years of hard work. One customer spots a cockroach, posts about it online, and suddenly your 4.8-star rating is cratering. Beyond reputation damage, pest issues can trigger health department violations, forced closures, and in the worst cases, lawsuits. For Arizona restaurant owners, pest control is not an optional line item. It is as essential as your commercial kitchen equipment.</p>
+<p>In the restaurant business, a single pest sighting can undo years of hard work. One customer spots a <a href="/pests/roaches">cockroach</a>, posts about it online, and suddenly your 4.8-star rating is cratering. Beyond reputation damage, pest issues can trigger health department violations, forced closures, and in the worst cases, lawsuits. For Arizona restaurant owners, pest control is not an optional line item. It is as essential as your commercial kitchen equipment.</p>
 
 <h2>Arizona Health Code Requirements for Pest Control</h2>
 
@@ -427,7 +427,7 @@ export const blogPosts: BlogPost[] = [
 
 <p>Common harborage areas include under and behind equipment (stoves, refrigerators, dishwashers), inside electrical boxes, in cracks along baseboards, and behind wall-mounted shelving. They are most active at night, so daytime sightings indicate a large population.</p>
 
-<h3>Rodents</h3>
+<h3><a href="/pests/rodents">Rodents</a></h3>
 
 <p>Mice and rats are attracted to the food, water, and shelter that restaurants provide. They contaminate food through droppings, urine, and fur. They gnaw through packaging, wiring, and even PVC pipes. A single mouse can produce 50-75 droppings per day, contaminating far more food than it actually eats.</p>
 
@@ -507,7 +507,7 @@ export const blogPosts: BlogPost[] = [
     readTime: "7 min read",
     author: "Hydra Pest Control Team",
     content: `
-<p>Finding bed bugs in your home is stressful. The thought of insects feeding on you while you sleep is enough to make anyone anxious. But here is the good news: professional bed bug treatment is highly effective, and most infestations can be completely eliminated with proper treatment and follow-up. The key to success is knowing what to expect and preparing properly.</p>
+<p>Finding <a href="/pests/bed-bugs">bed bugs</a> in your home is stressful. The thought of insects feeding on you while you sleep is enough to make anyone anxious. But here is the good news: professional bed bug treatment is highly effective, and most infestations can be completely eliminated with proper treatment and follow-up. The key to success is knowing what to expect and preparing properly.</p>
 
 <p>This guide walks you through the entire professional bed bug treatment process from initial inspection to final clearance.</p>
 

@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { usePortal } from "@/lib/portal-context";
+import Image from "next/image";
 import {
   LayoutDashboard,
   Library,
@@ -13,6 +14,7 @@ import {
   X,
   ChevronRight,
   User,
+  ArrowUpRight,
 } from "lucide-react";
 
 const navItems = [
@@ -64,11 +66,13 @@ export default function PortalShell({ children }: { children: React.ReactNode })
         <div className="px-5 py-5 border-b border-white/5">
           <div className="flex items-center justify-between">
             <Link href="/portal/dashboard" className="flex items-center gap-2.5">
-              <div className="w-8 h-8 bg-hydra-cyan rounded-lg flex items-center justify-center">
-                <span className="font-[var(--font-heading)] text-hydra-dark text-sm font-bold">
-                  H
-                </span>
-              </div>
+              <Image
+                src="/images/hydra-icon.png"
+                alt="Hydra"
+                width={32}
+                height={32}
+                className="w-8 h-8"
+              />
               <span className="font-[var(--font-heading)] text-white text-sm font-bold uppercase tracking-wider">
                 Hydra Portal
               </span>
@@ -103,6 +107,10 @@ export default function PortalShell({ children }: { children: React.ReactNode })
               </Link>
             );
           })}
+          <Link href="/" className="flex items-center gap-2 px-3 py-2 text-xs text-hydra-gray hover:text-hydra-cyan transition-colors mt-2">
+            <ArrowUpRight className="w-3.5 h-3.5" />
+            Back to Website
+          </Link>
         </nav>
 
         {/* User area */}
