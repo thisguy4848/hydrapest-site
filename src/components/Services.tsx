@@ -168,7 +168,7 @@ export default function Services() {
 
         <div className="text-center mt-12">
           <Link
-            href="#contact"
+            href="/#contact"
             className="group inline-flex items-center gap-2 text-hydra-teal font-semibold hover:text-hydra-dark transition-colors"
           >
             Get a free quote for your property

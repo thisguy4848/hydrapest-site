@@ -56,7 +56,7 @@ export default function Hero() {
           {/* CTA row */}
           <div className="flex flex-col sm:flex-row gap-4 mt-8">
             <Link
-              href="#contact"
+              href="/#contact"
               className="group inline-flex items-center justify-center gap-2 bg-hydra-cyan hover:bg-hydra-teal text-hydra-dark font-bold text-base px-8 py-4 rounded-full transition-all duration-200 glow-cyan hover:scale-105"
             >
               Get Your Free Inspection

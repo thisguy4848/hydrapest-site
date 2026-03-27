@@ -29,7 +29,7 @@ export default function CTA() {
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
           <Link
-            href="#contact"
+            href="/#contact"
             className="group inline-flex items-center justify-center gap-2 bg-hydra-dark hover:bg-hydra-navy text-white font-bold text-base px-8 py-4 rounded-full transition-all duration-200 hover:scale-105 shadow-lg shadow-hydra-dark/20"
           >
             Schedule Free Inspection

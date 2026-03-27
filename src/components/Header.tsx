@@ -16,12 +16,12 @@ import {
 } from "lucide-react";
 
 const navLinks = [
-  { href: "#services", label: "Services", icon: Bug },
-  { href: "#pest-library", label: "Pest Library", icon: Bug },
-  { href: "#about", label: "About", icon: Users },
-  { href: "#areas", label: "Service Areas", icon: MapPin },
+  { href: "/#services", label: "Services", icon: Bug },
+  { href: "/#pest-library", label: "Pest Library", icon: Bug },
+  { href: "/#about", label: "About", icon: Users },
+  { href: "/#areas", label: "Service Areas", icon: MapPin },
   { href: "/blog", label: "Blog", icon: MessageSquare },
-  { href: "#contact", label: "Contact", icon: MessageSquare },
+  { href: "/#contact", label: "Contact", icon: MessageSquare },
 ];
 
 export default function Header() {
@@ -139,7 +139,7 @@ export default function Header() {
               </Link>
 
               <Link
-                href="#contact"
+                href="/#contact"
                 className="bg-hydra-cyan hover:bg-hydra-teal text-hydra-dark font-semibold text-sm px-5 py-2.5 rounded-full transition-all duration-200 glow-cyan hover:scale-105"
               >
                 Free Quote

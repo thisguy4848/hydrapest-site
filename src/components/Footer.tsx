@@ -60,7 +60,7 @@ export default function Footer() {
             <ul className="space-y-2.5 text-sm text-gray-400">
               <li>
                 <Link
-                  href="#services"
+                  href="/#services"
                   className="hover:text-hydra-cyan transition-colors"
                 >
                   Residential Pest Control
@@ -68,7 +68,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href="#services"
+                  href="/#services"
                   className="hover:text-hydra-cyan transition-colors"
                 >
                   Commercial Pest Control
@@ -76,7 +76,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href="#services"
+                  href="/#services"
                   className="hover:text-hydra-cyan transition-colors"
                 >
                   Termite Treatment
@@ -84,7 +84,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href="#services"
+                  href="/#services"
                   className="hover:text-hydra-cyan transition-colors"
                 >
                   Scorpion Control
@@ -92,7 +92,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href="#services"
+                  href="/#services"
                   className="hover:text-hydra-cyan transition-colors"
                 >
                   Mosquito Control
@@ -100,7 +100,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href="#services"
+                  href="/#services"
                   className="hover:text-hydra-cyan transition-colors"
                 >
                   Bed Bug Treatment

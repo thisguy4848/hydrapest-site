@@ -15,7 +15,7 @@ export default function MobileCallBar() {
           Call Now
         </Link>
         <Link
-          href="#contact"
+          href="/#contact"
           className="flex-1 inline-flex items-center justify-center gap-2 bg-hydra-slate text-white font-semibold py-3 rounded-full border border-hydra-cyan/20"
         >
           <MessageSquare className="w-5 h-5" />
