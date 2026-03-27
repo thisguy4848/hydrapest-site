@@ -20,11 +20,11 @@ export default function Hero() {
           src="/images/truck-branded.jpg"
           alt="Hydra Pest Control branded truck"
           fill
-          className="object-cover opacity-15"
+          className="object-cover opacity-30"
           priority
         />
       </div>
-      <div className="absolute inset-0 bg-gradient-to-r from-hydra-dark via-hydra-dark/95 to-hydra-dark/70" />
+      <div className="absolute inset-0 bg-gradient-to-r from-hydra-dark/90 via-hydra-dark/80 to-hydra-dark/50" />
       <div className="absolute inset-0 texture-dots opacity-20" />
 
       {/* Diagonal accent */}
