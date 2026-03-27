@@ -14,14 +14,19 @@
   --font-body: var(--font-inter);
 }
 
-html {
+html,
+html body {
   scroll-behavior: smooth;
+  overflow-x: hidden;
+  max-width: 100vw;
 }
 
 body {
   font-family: var(--font-body), system-ui, sans-serif;
   background: #FAFFFE;
   color: #0A1628;
+  overflow-x: hidden;
+  width: 100%;
 }
 
 /* Gradient text utility */
