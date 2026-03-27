@@ -181,10 +181,10 @@ export default function Footer() {
             reserved.
           </p>
           <div className="flex items-center gap-4">
-            <Link href="#" className="hover:text-gray-300 transition-colors">
+            <Link href="/privacy" className="hover:text-gray-300 transition-colors">
               Privacy Policy
             </Link>
-            <Link href="#" className="hover:text-gray-300 transition-colors">
+            <Link href="/terms" className="hover:text-gray-300 transition-colors">
               Terms of Service
             </Link>
           </div>

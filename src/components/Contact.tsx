@@ -78,6 +78,16 @@ export default function Contact() {
               </div>
             </div>
 
+            <div className="mt-8">
+              <iframe
+                src="https://maps.google.com/maps?q=2158+N+Reay+Ln+Suite+1+Thatcher+AZ+85552&output=embed"
+                className="w-full h-32 rounded-xl border border-hydra-slate"
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Hydra Pest Control headquarters map"
+              />
+            </div>
+
             {/* Quick call CTA for mobile */}
             <Link
               href="tel:8334937229"

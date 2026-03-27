@@ -1,4 +1,5 @@
-import { Star, Quote } from "lucide-react";
+import { Star, Quote, ExternalLink } from "lucide-react";
+import Link from "next/link";
 
 const reviews = [
   {
@@ -91,6 +92,18 @@ export default function Reviews() {
               </div>
             </div>
           ))}
+        </div>
+
+        <div className="mt-12 text-center">
+          <Link
+            href="https://www.google.com/maps/search/Hydra+Pest+Control+Arizona"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 text-hydra-teal hover:text-hydra-dark font-semibold transition-colors"
+          >
+            See all reviews on Google
+            <ExternalLink className="w-4 h-4" />
+          </Link>
         </div>
       </div>
     </section>

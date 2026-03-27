@@ -1,11 +1,32 @@
 import { MapPin, Phone } from "lucide-react";
 import Link from "next/link";
 
+const citySlugMap: Record<string, string> = {
+  "Safford": "/pest-control-safford-az",
+  "Thatcher": "/pest-control-thatcher-az",
+  "Pima": "/pest-control-pima-az",
+  "Fort Thomas": "/pest-control-fort-thomas-az",
+  "Solomon": "/pest-control-solomon-az",
+  "Show Low": "/pest-control-show-low-az",
+  "Pinetop": "/pest-control-pinetop-lakeside-az",
+  "Lakeside": "/pest-control-pinetop-lakeside-az",
+  "Snowflake": "/pest-control-snowflake-az",
+  "Taylor": "/pest-control-taylor-az",
+  "Springerville": "/pest-control-springerville-az",
+  "Sierra Vista": "/pest-control-sierra-vista-az",
+  "Benson": "/pest-control-benson-az",
+  "Willcox": "/pest-control-willcox-az",
+  "Douglas": "/pest-control-douglas-az",
+  "Tombstone": "/pest-control-tombstone-az",
+  "Bisbee": "/pest-control-bisbee-az",
+};
+
 const offices = [
   {
     region: "Gila Valley",
     phone: "928-432-6200",
     address: "2158 N Reay Ln Suite 1, Thatcher, AZ 85552",
+    mapQuery: "2158+N+Reay+Ln+Suite+1+Thatcher+AZ+85552",
     cities: [
       "Safford",
       "Thatcher",
@@ -22,6 +43,7 @@ const offices = [
     region: "White Mountains",
     phone: "928-457-2481",
     address: "1080 N 16th St Suite 300, Show Low, AZ 85901",
+    mapQuery: "1080+N+16th+St+Suite+300+Show+Low+AZ+85901",
     cities: [
       "Show Low",
       "Pinetop",
@@ -39,6 +61,7 @@ const offices = [
     region: "Sierra Vista",
     phone: "520-523-8818",
     address: "4148 Industry Dr Suite 1111, Sierra Vista, AZ 85650",
+    mapQuery: "4148+Industry+Dr+Suite+1111+Sierra+Vista+AZ+85650",
     cities: [
       "Sierra Vista",
       "Benson",
@@ -98,15 +121,35 @@ export default function ServiceAreas() {
                   Cities Served
                 </p>
                 <div className="flex flex-wrap gap-1.5">
-                  {office.cities.map((city) => (
-                    <span
-                      key={city}
-                      className="text-xs bg-hydra-light text-hydra-navy px-2.5 py-1 rounded-full"
-                    >
-                      {city}
-                    </span>
-                  ))}
+                  {office.cities.map((city) =>
+                    citySlugMap[city] ? (
+                      <Link
+                        key={city}
+                        href={citySlugMap[city]}
+                        className="text-xs bg-hydra-light text-hydra-navy px-2.5 py-1 rounded-full hover:bg-hydra-cyan/20 hover:text-hydra-teal transition-colors"
+                      >
+                        {city}
+                      </Link>
+                    ) : (
+                      <span
+                        key={city}
+                        className="text-xs bg-hydra-light text-hydra-navy px-2.5 py-1 rounded-full"
+                      >
+                        {city}
+                      </span>
+                    )
+                  )}
                 </div>
+              </div>
+
+              <div className="mt-4">
+                <iframe
+                  src={`https://maps.google.com/maps?q=${office.mapQuery}&output=embed`}
+                  className="w-full h-48 rounded-xl border border-hydra-light"
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title={`Map of ${office.region} office`}
+                />
               </div>
             </div>
           ))}

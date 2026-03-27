@@ -1,4 +1,5 @@
 import { getAllPosts } from "@/lib/blog-data";
+import { cities } from "@/data/cities";
 
 export default function sitemap() {
   const baseUrl = "https://www.hydrapest.com";
@@ -12,6 +13,12 @@ export default function sitemap() {
       lastModified: new Date(post.date),
       changeFrequency: "monthly" as const,
       priority: 0.6,
+    })),
+    ...cities.map((city) => ({
+      url: `${baseUrl}/${city.slug}`,
+      lastModified: new Date(),
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
     })),
   ];
 }
