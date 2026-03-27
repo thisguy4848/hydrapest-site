@@ -14,11 +14,9 @@
   --font-body: var(--font-inter);
 }
 
-html,
-html body {
+html {
   scroll-behavior: smooth;
   overflow-x: hidden;
-  max-width: 100vw;
 }
 
 body {
@@ -26,7 +24,7 @@ body {
   background: #FAFFFE;
   color: #0A1628;
   overflow-x: hidden;
-  width: 100%;
+  min-width: 100%;
 }
 
 /* Gradient text utility */
