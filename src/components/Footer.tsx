@@ -171,6 +171,13 @@ export default function Footer() {
               Customer Portal
               <ArrowUpRight className="w-3.5 h-3.5" />
             </Link>
+            <Link
+              href="/portal"
+              className="inline-flex items-center gap-1 text-sm text-gray-400 hover:text-white transition-colors mt-2"
+            >
+              Employee Portal
+              <ArrowUpRight className="w-3.5 h-3.5" />
+            </Link>
           </div>
         </div>
 
