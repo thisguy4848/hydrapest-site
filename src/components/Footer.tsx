@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Phone, MapPin, Clock, Shield, ArrowUpRight } from "lucide-react";
 
 export default function Footer() {
@@ -9,11 +10,13 @@ export default function Footer() {
           {/* Brand */}
           <div className="sm:col-span-2 lg:col-span-1">
             <div className="flex items-center gap-2 mb-4">
-              <div className="w-10 h-10 bg-hydra-cyan rounded-lg flex items-center justify-center">
-                <span className="font-[var(--font-heading)] font-bold text-hydra-dark text-lg">
-                  H
-                </span>
-              </div>
+              <Image
+                src="/images/favicon-full.png"
+                alt="Hydra Pest Control logo"
+                width={40}
+                height={40}
+                className="w-10 h-10 rounded-lg"
+              />
               <div>
                 <span className="font-[var(--font-heading)] font-bold text-lg tracking-wide uppercase">
                   Hydra

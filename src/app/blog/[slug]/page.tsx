@@ -89,6 +89,62 @@ export default async function BlogPostPage({
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BlogPosting",
+            headline: post.title,
+            description: post.excerpt,
+            datePublished: post.date,
+            dateModified: post.date,
+            author: {
+              "@type": "Organization",
+              name: post.author,
+              url: "https://www.hydrapest.com",
+            },
+            publisher: {
+              "@type": "Organization",
+              name: "Hydra Pest Control",
+              url: "https://www.hydrapest.com",
+            },
+            mainEntityOfPage: {
+              "@type": "WebPage",
+              "@id": `https://www.hydrapest.com/blog/${post.slug}`,
+            },
+          }),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              {
+                "@type": "ListItem",
+                position: 1,
+                name: "Home",
+                item: "https://www.hydrapest.com",
+              },
+              {
+                "@type": "ListItem",
+                position: 2,
+                name: "Blog",
+                item: "https://www.hydrapest.com/blog",
+              },
+              {
+                "@type": "ListItem",
+                position: 3,
+                name: post.title,
+                item: `https://www.hydrapest.com/blog/${post.slug}`,
+              },
+            ],
+          }),
+        }}
+      />
       <Header />
       <main>
         {/* Hero */}

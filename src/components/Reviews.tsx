@@ -48,7 +48,7 @@ export default function Reviews() {
             What Customers Say
           </span>
           <h2 className="font-[var(--font-heading)] text-3xl sm:text-4xl md:text-5xl font-bold uppercase text-hydra-dark mt-3">
-            Real Results, Real Reviews
+            Don&apos;t Take Our Word For It
           </h2>
           <div className="flex items-center justify-center gap-2 mt-4">
             <div className="flex">

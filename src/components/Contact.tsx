@@ -32,11 +32,11 @@ export default function Contact() {
             <h2 className="font-[var(--font-heading)] text-3xl sm:text-4xl font-bold uppercase mt-3">
               Free Inspection.
               <br />
-              <span className="text-gradient">No Obligation.</span>
+              <span className="text-gradient">Fast Answer.</span>
             </h2>
             <p className="mt-4 text-gray-400 leading-relaxed">
-              Call us or fill out the form and we&apos;ll get back to you
-              same-day. Most inspections can be scheduled within 24-48 hours.
+              Fill out the form and we&apos;ll call you back today. Or just
+              call us now — 833-493-7229.
             </p>
 
             <div className="space-y-5 mt-10">
@@ -207,7 +207,7 @@ export default function Contact() {
                     type="submit"
                     className="w-full inline-flex items-center justify-center gap-2 bg-hydra-cyan hover:bg-hydra-teal text-hydra-dark font-bold text-base px-8 py-4 rounded-full transition-all duration-200 glow-cyan hover:scale-[1.02]"
                   >
-                    Get My Free Quote
+                    Send My Info — Get a Call Today
                     <ArrowRight className="w-5 h-5" />
                   </button>
 

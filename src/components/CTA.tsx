@@ -23,8 +23,8 @@ export default function CTA() {
         </h2>
 
         <p className="mt-4 text-hydra-dark/70 text-lg max-w-lg mx-auto">
-          Get a free inspection and custom treatment plan. Most appointments
-          available within 24-48 hours.
+          Free inspection. Custom treatment plan. We can usually be there
+          tomorrow.
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">

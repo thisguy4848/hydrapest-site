@@ -17,7 +17,7 @@ const steps = [
     num: "03",
     icon: SprayCan,
     title: "Custom Treatment",
-    text: "We design a treatment plan tailored to your home using iCap Technology.",
+    text: "We design a treatment plan specific to your home and your pest problem.",
   },
   {
     num: "04",

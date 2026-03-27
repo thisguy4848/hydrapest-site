@@ -67,11 +67,10 @@ export default function About() {
               <span className="text-gradient">We Protect Here.</span>
             </h2>
             <p className="mt-5 text-hydra-gray text-lg leading-relaxed">
-              Hydra Pest Control was founded to bring modern, professional-grade
-              pest management back to the communities we call home. After years
-              working across different states and climates, we returned to
-              Arizona with the skills and knowledge to deliver a service that
-              actually lasts.
+              We spent years working pest control in other states. Then we came
+              home to Arizona and started doing it right. Hydra Pest Control
+              exists because our communities deserve better than watered-down
+              products and corner-cutting.
             </p>
             <p className="mt-4 text-hydra-gray leading-relaxed">
               We don&apos;t water down our products to save a buck. We don&apos;t

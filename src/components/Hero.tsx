@@ -43,15 +43,14 @@ export default function Hero() {
           {/* Heading */}
           <h1 className="font-[var(--font-heading)] text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold uppercase tracking-tight leading-[1.05]">
             Arizona&apos;s{" "}
-            <span className="text-gradient">Premium</span>
+            <span className="text-gradient">Toughest</span>
             <br />
             Pest Control
           </h1>
 
           <p className="mt-5 text-lg sm:text-xl text-gray-300 max-w-xl leading-relaxed">
-            Protecting homes and businesses across Gila Valley, the White
-            Mountains, and Sierra Vista with advanced, long-lasting pest
-            solutions.
+            We kill scorpions, termites, and every pest in between. Same-day
+            service across Gila Valley, the White Mountains, and Sierra Vista.
           </p>
 
           {/* CTA row */}

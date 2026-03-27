@@ -18,8 +18,9 @@ const services = [
     icon: Home,
     title: "Residential",
     image: "/images/truck-residential.jpg",
+    imageAlt: "Hydra Pest Control residential home treatment in Arizona",
     description:
-      "Custom pest programs designed for your home. Our Hydra-Guard Barriers provide long-lasting protection using iCap Technology — controlled-release microcap formulations that keep working months after application.",
+      "Custom pest programs built for your home and your family. Our treatments keep working for months after we leave — not days. We use controlled-release formulations that other companies don't carry.",
     features: [
       "Custom treatment plans",
       "Pet & family safe",
@@ -30,6 +31,7 @@ const services = [
     icon: Building2,
     title: "Commercial",
     image: "/images/restaurant.jpg",
+    imageAlt: "Commercial pest control service for restaurant in Arizona",
     description:
       "Discreet, professional pest management for restaurants, hotels, schools, healthcare, retail, and industrial facilities. Detailed reporting and flexible scheduling to minimize disruption.",
     features: [
@@ -42,6 +44,7 @@ const services = [
     icon: Bug,
     title: "Termite Control",
     image: "/images/termite-treatment.jpg",
+    imageAlt: "Professional termite treatment and foundation inspection",
     description:
       "Pre-construction and post-construction treatments, drywood termite service, carpenter ant elimination, and certified Wood Destroying Inspections (WDIIR / NPMA-33).",
     features: ["5-year warranty", "WDO inspections", "Pre & post-construction"],
@@ -50,6 +53,7 @@ const services = [
     icon: Bug,
     title: "Specialty Services",
     image: "/images/aerial-property.jpg",
+    imageAlt: "Aerial view of Arizona property for pest assessment",
     description:
       "Targeted solutions for scorpions, bed bugs, bees, mosquitoes, pocket gophers, and more. We use professional-grade products — never watered down.",
     features: ["Scorpion control", "Bed bug treatment", "Bee removal"],
@@ -89,11 +93,11 @@ export default function Services() {
             What We Do
           </span>
           <h2 className="font-[var(--font-heading)] text-3xl sm:text-4xl md:text-5xl font-bold uppercase text-hydra-dark mt-3">
-            Comprehensive Pest Protection
+            Every Pest. Every Property.
           </h2>
           <p className="mt-4 text-hydra-gray text-lg">
-            From recurring residential programs to one-time specialty
-            treatments, we&apos;ve got Arizona covered.
+            Recurring plans that keep pests out. One-time treatments that
+            solve the problem. Your call.
           </p>
         </div>
 
@@ -109,7 +113,7 @@ export default function Services() {
                 <div className="relative h-48 overflow-hidden">
                   <Image
                     src={service.image}
-                    alt={service.title}
+                    alt={service.imageAlt}
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-500"
                     sizes="(max-width: 768px) 100vw, 50vw"

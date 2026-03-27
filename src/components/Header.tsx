@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import {
   Phone,
   Menu,
@@ -74,11 +75,13 @@ export default function Header() {
           <div className="flex items-center justify-between h-16 sm:h-20">
             {/* Logo */}
             <Link href="/" className="flex items-center gap-2 shrink-0">
-              <div className="w-10 h-10 sm:w-12 sm:h-12 bg-hydra-dark rounded-lg flex items-center justify-center">
-                <span className="text-hydra-cyan font-[var(--font-heading)] font-bold text-lg sm:text-xl">
-                  H
-                </span>
-              </div>
+              <Image
+                src="/images/favicon-full.png"
+                alt="Hydra Pest Control logo"
+                width={48}
+                height={48}
+                className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg"
+              />
               <div className="hidden sm:block">
                 <span className="font-[var(--font-heading)] font-bold text-hydra-dark text-xl tracking-wide uppercase">
                   Hydra
