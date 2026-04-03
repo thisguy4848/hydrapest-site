@@ -33,7 +33,7 @@ export const trainingModules: TrainingModule[] = [
     description:
       "Get to know Hydra Pest Control — our mission, values, and what makes us different. This module covers company history, organizational structure, and the standards we hold ourselves to every day in the field.",
     duration: "15 min",
-    videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+    videoUrl: "",
     keyTakeaways: [
       "Understand Hydra's mission and core values",
       "Know the organizational structure and your reporting chain",
@@ -41,9 +41,9 @@ export const trainingModules: TrainingModule[] = [
       "Understand our commitment to customer satisfaction",
     ],
     resources: [
-      { name: "Employee Handbook (PDF)", url: "#" },
-      { name: "Company Org Chart", url: "#" },
-      { name: "Brand Guidelines", url: "#" },
+      { name: "Employee Handbook (PDF)", url: "" },
+      { name: "Company Org Chart", url: "" },
+      { name: "Brand Guidelines", url: "" },
     ],
     order: 1,
   },
@@ -54,7 +54,7 @@ export const trainingModules: TrainingModule[] = [
     description:
       "Your safety is non-negotiable. Learn the required personal protective equipment for every job type, proper chemical handling procedures, emergency protocols, and OSHA compliance standards.",
     duration: "20 min",
-    videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+    videoUrl: "",
     keyTakeaways: [
       "Identify required PPE for each service type",
       "Understand chemical handling and storage procedures",
@@ -62,10 +62,10 @@ export const trainingModules: TrainingModule[] = [
       "Stay compliant with OSHA and Arizona state regulations",
     ],
     resources: [
-      { name: "PPE Checklist (PDF)", url: "#" },
-      { name: "Chemical Handling Guide", url: "#" },
-      { name: "Emergency Contact Card", url: "#" },
-      { name: "OSHA Quick Reference", url: "#" },
+      { name: "PPE Checklist (PDF)", url: "" },
+      { name: "Chemical Handling Guide", url: "" },
+      { name: "Emergency Contact Card", url: "" },
+      { name: "OSHA Quick Reference", url: "" },
     ],
     order: 2,
   },
@@ -76,7 +76,7 @@ export const trainingModules: TrainingModule[] = [
     description:
       "Every interaction is a chance to build trust. Learn Hydra's communication guidelines, how to handle complaints professionally, and the small touches that turn one-time customers into lifelong advocates.",
     duration: "12 min",
-    videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+    videoUrl: "",
     keyTakeaways: [
       "Master the Hydra greeting and service walkthrough",
       "Handle customer concerns with confidence and empathy",
@@ -84,9 +84,9 @@ export const trainingModules: TrainingModule[] = [
       "Turn every job into a five-star experience",
     ],
     resources: [
-      { name: "Customer Communication Scripts", url: "#" },
-      { name: "Service Visit Checklist", url: "#" },
-      { name: "Complaint Resolution Flowchart", url: "#" },
+      { name: "Customer Communication Scripts", url: "" },
+      { name: "Service Visit Checklist", url: "" },
+      { name: "Complaint Resolution Flowchart", url: "" },
     ],
     order: 3,
   },
@@ -97,7 +97,7 @@ export const trainingModules: TrainingModule[] = [
     description:
       "Arizona is home to over 40 scorpion species, including the bark scorpion — the most venomous in North America. Learn to identify common species, understand their behavior patterns, and apply the correct treatment protocols.",
     duration: "18 min",
-    videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+    videoUrl: "",
     keyTakeaways: [
       "Identify the Arizona bark scorpion and other common species",
       "Understand scorpion harborage and entry points",
@@ -105,9 +105,9 @@ export const trainingModules: TrainingModule[] = [
       "Execute the Hydra scorpion treatment protocol",
     ],
     resources: [
-      { name: "Scorpion ID Field Card (PDF)", url: "#" },
-      { name: "UV Inspection Guide", url: "#" },
-      { name: "Treatment Protocol Sheet", url: "#" },
+      { name: "Scorpion ID Field Card (PDF)", url: "" },
+      { name: "UV Inspection Guide", url: "" },
+      { name: "Treatment Protocol Sheet", url: "" },
     ],
     order: 4,
   },
@@ -118,7 +118,7 @@ export const trainingModules: TrainingModule[] = [
     description:
       "Termites cause billions in damage annually. Master the differences between subterranean and drywood termites, learn to spot evidence of infestation, and understand the WDIIR (Wood Destroying Insect Inspection Report) process.",
     duration: "25 min",
-    videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+    videoUrl: "",
     keyTakeaways: [
       "Distinguish subterranean from drywood termite damage",
       "Identify mud tubes, frass, and swarm evidence",
@@ -126,10 +126,10 @@ export const trainingModules: TrainingModule[] = [
       "Communicate findings clearly to homeowners and realtors",
     ],
     resources: [
-      { name: "Termite ID Guide (PDF)", url: "#" },
-      { name: "WDIIR Form Template", url: "#" },
-      { name: "Inspection Walkthrough Checklist", url: "#" },
-      { name: "Damage Photo Reference Library", url: "#" },
+      { name: "Termite ID Guide (PDF)", url: "" },
+      { name: "WDIIR Form Template", url: "" },
+      { name: "Inspection Walkthrough Checklist", url: "" },
+      { name: "Damage Photo Reference Library", url: "" },
     ],
     order: 5,
   },
@@ -140,7 +140,7 @@ export const trainingModules: TrainingModule[] = [
     description:
       "Quick-reference training on the most common pests you'll encounter in the field — from black widows and brown recluses to roof rats, pigeons, bed bugs, and kissing bugs. Know what you're looking at and how to respond.",
     duration: "22 min",
-    videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+    videoUrl: "",
     keyTakeaways: [
       "Identify the top 15 pests encountered in Arizona",
       "Understand seasonal activity patterns for each pest",
@@ -148,9 +148,9 @@ export const trainingModules: TrainingModule[] = [
       "Recognize signs that require specialist escalation",
     ],
     resources: [
-      { name: "Arizona Pest Field Guide (PDF)", url: "#" },
-      { name: "Seasonal Pest Calendar", url: "#" },
-      { name: "Quick ID Flashcards", url: "#" },
+      { name: "Arizona Pest Field Guide (PDF)", url: "" },
+      { name: "Seasonal Pest Calendar", url: "" },
+      { name: "Quick ID Flashcards", url: "" },
     ],
     order: 6,
   },
@@ -161,7 +161,7 @@ export const trainingModules: TrainingModule[] = [
     description:
       "The Hydra-Guard barrier is our signature perimeter treatment. Learn the step-by-step application process, proper spray patterns, product mixing ratios, and how to communicate the value of ongoing barrier protection to customers.",
     duration: "16 min",
-    videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+    videoUrl: "",
     keyTakeaways: [
       "Execute the full Hydra-Guard barrier application process",
       "Maintain proper spray distance and pattern coverage",
@@ -169,9 +169,9 @@ export const trainingModules: TrainingModule[] = [
       "Explain the barrier protection value to customers",
     ],
     resources: [
-      { name: "Hydra-Guard Application SOP", url: "#" },
-      { name: "Mixing Ratio Quick Sheet", url: "#" },
-      { name: "Coverage Map Template", url: "#" },
+      { name: "Hydra-Guard Application SOP", url: "" },
+      { name: "Mixing Ratio Quick Sheet", url: "" },
+      { name: "Coverage Map Template", url: "" },
     ],
     order: 7,
   },
@@ -182,7 +182,7 @@ export const trainingModules: TrainingModule[] = [
     description:
       "iCap microencapsulated formulation requires specific handling and application techniques for maximum effectiveness. Learn proper storage, mixing, application methods, and the science behind why microcap technology outperforms traditional sprays.",
     duration: "14 min",
-    videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+    videoUrl: "",
     keyTakeaways: [
       "Understand how microencapsulation technology works",
       "Store and handle iCap products correctly",
@@ -190,9 +190,9 @@ export const trainingModules: TrainingModule[] = [
       "Explain the long-lasting benefits to customers",
     ],
     resources: [
-      { name: "iCap Product Label (PDF)", url: "#" },
-      { name: "Application Rate Chart", url: "#" },
-      { name: "Safety Data Sheet", url: "#" },
+      { name: "iCap Product Label (PDF)", url: "" },
+      { name: "Application Rate Chart", url: "" },
+      { name: "Safety Data Sheet", url: "" },
     ],
     order: 8,
   },
@@ -203,7 +203,7 @@ export const trainingModules: TrainingModule[] = [
     description:
       "Pre-construction termite treatment is a critical revenue stream and requires precise execution. Learn the complete protocol for new-build treatments, including soil preparation, chemical application zones, and builder coordination.",
     duration: "20 min",
-    videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+    videoUrl: "",
     keyTakeaways: [
       "Understand Arizona pre-treatment code requirements",
       "Apply termiticide to all required zones pre-pour",
@@ -211,10 +211,10 @@ export const trainingModules: TrainingModule[] = [
       "Coordinate effectively with builders and general contractors",
     ],
     resources: [
-      { name: "Pre-Treatment Protocol (PDF)", url: "#" },
-      { name: "Builder Coordination Checklist", url: "#" },
-      { name: "Warranty Documentation Template", url: "#" },
-      { name: "Arizona Code Reference", url: "#" },
+      { name: "Pre-Treatment Protocol (PDF)", url: "" },
+      { name: "Builder Coordination Checklist", url: "" },
+      { name: "Warranty Documentation Template", url: "" },
+      { name: "Arizona Code Reference", url: "" },
     ],
     order: 9,
   },
@@ -225,7 +225,7 @@ export const trainingModules: TrainingModule[] = [
     description:
       "Well-maintained equipment means reliable service and fewer callbacks. Learn daily, weekly, and monthly maintenance routines for sprayers, backpacks, vehicle rigs, and handheld tools.",
     duration: "12 min",
-    videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+    videoUrl: "",
     keyTakeaways: [
       "Perform daily pre-route equipment checks",
       "Maintain sprayer pumps, hoses, and nozzles",
@@ -233,9 +233,9 @@ export const trainingModules: TrainingModule[] = [
       "Report equipment issues before they become failures",
     ],
     resources: [
-      { name: "Daily Equipment Checklist (PDF)", url: "#" },
-      { name: "Sprayer Maintenance Guide", url: "#" },
-      { name: "Vehicle Inspection Form", url: "#" },
+      { name: "Daily Equipment Checklist (PDF)", url: "" },
+      { name: "Sprayer Maintenance Guide", url: "" },
+      { name: "Vehicle Inspection Form", url: "" },
     ],
     order: 10,
   },
@@ -246,7 +246,7 @@ export const trainingModules: TrainingModule[] = [
     description:
       "Accurate product mixing protects your health, the customer's property, and Hydra's reputation. Learn proper mixing ratios for every product in our lineup and how to read and reference Safety Data Sheets.",
     duration: "15 min",
-    videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+    videoUrl: "",
     keyTakeaways: [
       "Mix all Hydra products at the correct ratios",
       "Read and interpret Safety Data Sheets (SDS)",
@@ -254,9 +254,9 @@ export const trainingModules: TrainingModule[] = [
       "Handle spills and accidental exposure correctly",
     ],
     resources: [
-      { name: "Product Mixing Chart (PDF)", url: "#" },
-      { name: "SDS Binder Index", url: "#" },
-      { name: "Spill Response Procedure", url: "#" },
+      { name: "Product Mixing Chart (PDF)", url: "" },
+      { name: "SDS Binder Index", url: "" },
+      { name: "Spill Response Procedure", url: "" },
     ],
     order: 11,
   },
@@ -267,7 +267,7 @@ export const trainingModules: TrainingModule[] = [
     description:
       "Great technicians solve problems customers didn't know they had — without being pushy. Learn how to identify upsell opportunities during service visits and present them as genuine value rather than a hard sell.",
     duration: "10 min",
-    videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+    videoUrl: "",
     keyTakeaways: [
       "Spot natural upsell opportunities during inspections",
       "Present additional services as solutions, not sales pitches",
@@ -275,9 +275,9 @@ export const trainingModules: TrainingModule[] = [
       "Track upsell conversions and learn from what works",
     ],
     resources: [
-      { name: "Upsell Opportunity Guide (PDF)", url: "#" },
-      { name: "Service Add-On Pricing Sheet", url: "#" },
-      { name: "Conversation Scripts", url: "#" },
+      { name: "Upsell Opportunity Guide (PDF)", url: "" },
+      { name: "Service Add-On Pricing Sheet", url: "" },
+      { name: "Conversation Scripts", url: "" },
     ],
     order: 12,
   },
@@ -288,7 +288,7 @@ export const trainingModules: TrainingModule[] = [
     description:
       "Happy customers are your best marketing channel. Learn how to ask for referrals at the right time, make it easy for customers to spread the word, and track referral sources for bonus eligibility.",
     duration: "8 min",
-    videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+    videoUrl: "",
     keyTakeaways: [
       "Ask for referrals at the peak moment of satisfaction",
       "Use referral cards and digital tools to make sharing easy",
@@ -296,11 +296,28 @@ export const trainingModules: TrainingModule[] = [
       "Track your referral numbers for monthly bonus eligibility",
     ],
     resources: [
-      { name: "Referral Program Overview (PDF)", url: "#" },
-      { name: "Referral Card Templates", url: "#" },
-      { name: "Referral Tracking Sheet", url: "#" },
+      { name: "Referral Program Overview (PDF)", url: "" },
+      { name: "Referral Card Templates", url: "" },
+      { name: "Referral Tracking Sheet", url: "" },
     ],
     order: 13,
+  },
+  {
+    id: "d2d-pest-control-basics",
+    title: "Basics of the Pest Control Industry",
+    category: "Sales & Growth",
+    description:
+      "Introduction to the pest control industry for door-to-door sales reps. Covers industry fundamentals, common services, how the business works, and what customers care about.",
+    duration: "20 min",
+    videoUrl: "https://drive.google.com/file/d/1FE3ySQ6XojkZXrxPEloy7CC0skTJuI_P/preview",
+    keyTakeaways: [
+      "Understand how the pest control industry works",
+      "Know the core services Hydra offers and why they matter",
+      "Speak confidently about common pests and treatment approaches",
+      "Build credibility at the door with real industry knowledge",
+    ],
+    resources: [],
+    order: 14,
   },
 ];
 
@@ -310,6 +327,10 @@ export function getModuleById(id: string): TrainingModule | undefined {
 
 export function getModulesByCategory(category: string): TrainingModule[] {
   return trainingModules.filter((m) => m.category === category).sort((a, b) => a.order - b.order);
+}
+
+export function getDefaultModules(): TrainingModule[] {
+  return trainingModules;
 }
 
 export function getAdjacentModules(id: string): {

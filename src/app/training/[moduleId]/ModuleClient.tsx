@@ -15,7 +15,8 @@ import {
   ChevronLeft,
   Lock,
 } from "lucide-react";
-import { getModuleById, getAdjacentModules } from "@/lib/training-data";
+import { loadTrainingModules } from "@/lib/training-store";
+import type { TrainingModule } from "@/lib/training-data";
 
 const STORAGE_KEY_AUTH = "hydra-training-auth";
 const STORAGE_KEY_PROGRESS = "hydra-training-progress";
@@ -26,9 +27,11 @@ export default function ModuleClient({ moduleId }: { moduleId: string }) {
   const [passwordError, setPasswordError] = useState(false);
   const [completedModules, setCompletedModules] = useState<string[]>([]);
   const [mounted, setMounted] = useState(false);
+  const [modules, setModules] = useState<TrainingModule[]>([]);
 
   useEffect(() => {
     setMounted(true);
+    setModules(loadTrainingModules());
     const auth = localStorage.getItem(STORAGE_KEY_AUTH);
     if (auth === "true") setAuthenticated(true);
     const progress = localStorage.getItem(STORAGE_KEY_PROGRESS);
@@ -106,7 +109,7 @@ export default function ModuleClient({ moduleId }: { moduleId: string }) {
     );
   }
 
-  const mod = getModuleById(moduleId);
+  const mod = modules.find((m) => m.id === moduleId);
 
   if (!mod) {
     return (
@@ -134,7 +137,10 @@ export default function ModuleClient({ moduleId }: { moduleId: string }) {
     );
   }
 
-  const { prev, next } = getAdjacentModules(moduleId);
+  const sorted = [...modules].sort((a, b) => a.order - b.order);
+  const idx = sorted.findIndex((m) => m.id === moduleId);
+  const prev = idx > 0 ? sorted[idx - 1] : null;
+  const next = idx < sorted.length - 1 ? sorted[idx + 1] : null;
   const isComplete = completedModules.includes(moduleId);
 
   return (
@@ -183,13 +189,19 @@ export default function ModuleClient({ moduleId }: { moduleId: string }) {
           </div>
 
           <div className="bg-hydra-dark rounded-2xl overflow-hidden mb-8 aspect-video">
-            <iframe
-              src={mod.videoUrl}
-              className="w-full h-full"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-              title={mod.title}
-            />
+            {mod.videoUrl ? (
+              <iframe
+                src={mod.videoUrl}
+                className="w-full h-full"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                title={mod.title}
+              />
+            ) : (
+              <div className="w-full h-full flex items-center justify-center">
+                <p className="text-hydra-gray text-lg">Video coming soon</p>
+              </div>
+            )}
           </div>
 
           <div className="grid lg:grid-cols-3 gap-8">

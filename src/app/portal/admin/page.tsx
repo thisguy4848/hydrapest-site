@@ -11,6 +11,7 @@ import {
   UserX,
   UserPlus,
   FilePlus,
+  GraduationCap,
   CheckCircle,
   Clock,
 } from "lucide-react";
@@ -147,6 +148,13 @@ export default function AdminDashboard() {
           >
             <FilePlus className="w-4 h-4" />
             Add Resource
+          </Link>
+          <Link
+            href="/portal/admin/training"
+            className="inline-flex items-center gap-2 px-4 py-2.5 bg-hydra-slate text-hydra-white rounded-lg text-sm font-semibold hover:bg-hydra-slate/80 transition-colors border border-hydra-slate/50"
+          >
+            <GraduationCap className="w-4 h-4" />
+            Manage Training
           </Link>
         </div>
 

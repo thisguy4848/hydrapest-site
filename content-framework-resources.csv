@@ -1,0 +1,26 @@
+ID,Department,Category,Title,Type,Description,URL,File Size,Required for Onboarding
+res-handbook,GLOBAL,Company Policies,Employee Handbook 2026,pdf,Complete handbook: policies / benefits / time-off / code of conduct,,~4 MB,yes
+res-org-chart,GLOBAL,Company Policies,Company Org Chart,pdf,Organizational structure and reporting chain,,~500 KB,yes
+res-brand-guidelines,GLOBAL,Company Policies,Brand Guidelines,pdf,Logo usage / colors / uniform standards / vehicle branding,,~2 MB,no
+res-ppe-checklist,GLOBAL,Safety & Compliance,PPE Checklist,pdf,Required personal protective equipment by service type,,~300 KB,yes
+res-emergency-card,GLOBAL,Safety & Compliance,Emergency Contact Card,pdf,Printable card: poison control / hospital / manager contacts,,~200 KB,yes
+res-sds-binder,GLOBAL,Safety & Compliance,Safety Data Sheet Binder,pdf,Complete SDS for every product in the Hydra lineup. Required on every vehicle.,,~12 MB,yes
+res-az-regulations,GLOBAL,Safety & Compliance,Arizona Pest Control Regulations,link,AZ Dept of Agriculture Pest Management Division,https://agriculture.az.gov/pestspest-control/pest-management-division,,no
+res-service-checklist,OPS,Field Operations,Service Visit Checklist,pdf,Standard checklist for every residential and commercial visit,,~300 KB,no
+res-pest-field-card,OPS,Field Operations,Pest Identification Field Card,pdf,Printable quick-reference: top 20 AZ pests with photos and treatment approach,,~2 MB,no
+res-seasonal-calendar,OPS,Field Operations,Seasonal Pest Calendar,pdf,Month-by-month pest activity chart for all 3 service regions,,~500 KB,no
+res-mixing-chart,OPS,Equipment & Products,Product Mixing Chart,pdf,Mixing ratios for every product in the Hydra lineup,,~400 KB,no
+res-equipment-checklist,OPS,Equipment & Products,Daily Equipment Checklist,pdf,Pre-route check for sprayers / backpacks / vehicle rig / tools,,~300 KB,no
+res-vehicle-inspection,OPS,Equipment & Products,Vehicle Inspection Form,pdf,Weekly vehicle condition and inventory form,,~300 KB,no
+res-hydra-guard-sop,OPS,Treatment Protocols,Hydra-Guard Barrier Application SOP,pdf,Step-by-step barrier application: spray patterns / mixing / coverage,,~1 MB,no
+res-icap-label,OPS,Treatment Protocols,iCap Product Label & Rates,pdf,Product label with application rate chart,,~500 KB,no
+res-pretreat-protocol,OPS,Treatment Protocols,Termite Pre-Construction Protocol,pdf,Pre-treatment procedure: soil prep / chemical zones / documentation,,~1 MB,no
+res-wdiir-form,OPS,Treatment Protocols,WDIIR Form Template,pdf,Wood Destroying Insect Inspection Report template,,~400 KB,no
+res-pricing-guide,SALES,Sales Tools,Service Pricing & Packages Guide,pdf,Current pricing / bundles / seasonal promotions. Updated monthly.,,~2 MB,no
+res-upsell-guide,SALES,Sales Tools,Upsell Opportunity Guide,pdf,How to spot and present add-on services during visits,,~500 KB,no
+res-referral-overview,SALES,Sales Tools,Referral Program Overview,pdf,Referral program details / cards / tracking / bonus eligibility,,~400 KB,no
+res-customer-scripts,SALES,Sales Tools,Customer Communication Scripts,pdf,Greeting / walkthrough / objection handling / close scripts,,~300 KB,no
+res-complaint-flowchart,SALES,Sales Tools,Complaint Resolution Flowchart,pdf,Step-by-step guide to handling customer concerns,,~300 KB,no
+res-route-optimization,ADMIN,Operations,Route Optimization Best Practices,document,Tips for planning efficient daily routes and minimizing windshield time,,~500 KB,no
+res-warranty-template,ADMIN,Operations,Warranty Documentation Template,pdf,Template for treatment warranty paperwork,,~300 KB,no
+res-builder-checklist,ADMIN,Operations,Builder Coordination Checklist,pdf,Pre-con treatment coordination with GCs and builders,,~300 KB,no

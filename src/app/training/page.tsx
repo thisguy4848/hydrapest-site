@@ -19,7 +19,8 @@ import {
   LogOut,
   User,
 } from "lucide-react";
-import { trainingModules, categories, type Category } from "@/lib/training-data";
+import { categories, type Category } from "@/lib/training-data";
+import { loadTrainingModules } from "@/lib/training-store";
 
 const categoryIcons: Record<Category, React.ElementType> = {
   Onboarding: Shield,
@@ -44,9 +45,11 @@ export default function TrainingPage() {
   const [searchQuery, setSearchQuery] = useState("");
   const [activeCategory, setActiveCategory] = useState<string>("All");
   const [mounted, setMounted] = useState(false);
+  const [modules, setModules] = useState<ReturnType<typeof loadTrainingModules>>([]);
 
   useEffect(() => {
     setMounted(true);
+    setModules(loadTrainingModules());
     const auth = localStorage.getItem(STORAGE_KEY_AUTH);
     if (auth === "true") setAuthenticated(true);
     const name = localStorage.getItem(STORAGE_KEY_NAME);
@@ -86,7 +89,7 @@ export default function TrainingPage() {
   }
 
   const filteredModules = useMemo(() => {
-    return trainingModules
+    return modules
       .filter((m) => {
         if (activeCategory !== "All" && m.category !== activeCategory) return false;
         if (searchQuery) {
@@ -100,10 +103,10 @@ export default function TrainingPage() {
         return true;
       })
       .sort((a, b) => a.order - b.order);
-  }, [activeCategory, searchQuery]);
+  }, [modules, activeCategory, searchQuery]);
 
   const completedCount = completedModules.length;
-  const totalCount = trainingModules.length;
+  const totalCount = modules.length;
   const progressPercent = totalCount > 0 ? Math.round((completedCount / totalCount) * 100) : 0;
 
   if (!mounted) return null;

@@ -161,13 +161,19 @@ export default function ResourceClient({ id }: { id: string }) {
             {/* Content area based on type */}
             {(resource.type === "training" || resource.type === "video") && (
               <div className="bg-hydra-dark rounded-2xl overflow-hidden aspect-video">
-                <iframe
-                  src={resource.url}
-                  className="w-full h-full"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                  title={resource.title}
-                />
+                {resource.url ? (
+                  <iframe
+                    src={resource.url}
+                    className="w-full h-full"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                    title={resource.title}
+                  />
+                ) : (
+                  <div className="w-full h-full flex items-center justify-center">
+                    <p className="text-hydra-gray text-lg">Video coming soon</p>
+                  </div>
+                )}
               </div>
             )}
 
