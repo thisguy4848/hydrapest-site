@@ -4,10 +4,10 @@ import { useState, useMemo } from "react";
 import PortalShell from "@/components/portal/PortalShell";
 import { usePortal } from "@/lib/portal-context";
 import {
-  addEmployee,
-  updateEmployee,
-  disableEmployee,
-} from "@/lib/portal-store";
+  addEmployee as addEmployeeAsync,
+  updateEmployee as updateEmployeeAsync,
+  disableEmployee as disableEmployeeAsync,
+} from "@/lib/supabase-store";
 import type { Employee, UserRole } from "@/lib/portal-types";
 import {
   UserPlus,
@@ -23,10 +23,6 @@ import {
 
 function generatePin(): string {
   return String(Math.floor(1000 + Math.random() * 9000));
-}
-
-function generateId(): string {
-  return `emp-${Date.now()}-${Math.random().toString(36).slice(2, 6)}`;
 }
 
 interface EmployeeFormData {
@@ -117,47 +113,52 @@ export default function EmployeesPage() {
     setModalOpen(true);
   }
 
-  function handleSave() {
+  async function handleSave() {
     if (!form.name.trim() || !form.email.trim() || !form.departmentId || !form.positionId || !form.locationId) return;
 
-    if (editingId) {
-      updateEmployee(editingId, {
-        name: form.name.trim(),
-        email: form.email.trim(),
-        pin: form.pin,
-        role: form.role,
-        departmentId: form.departmentId,
-        positionId: form.positionId,
-        locationId: form.locationId,
-      });
-      showToast("Employee updated.");
-    } else {
-      const newEmp: Employee = {
-        id: generateId(),
-        name: form.name.trim(),
-        email: form.email.trim(),
-        pin: form.pin,
-        role: form.role,
-        departmentId: form.departmentId,
-        positionId: form.positionId,
-        locationId: form.locationId,
-        status: "active",
-        createdAt: new Date().toISOString(),
-      };
-      addEmployee(newEmp);
-      showToast("Employee added.");
+    try {
+      if (editingId) {
+        await updateEmployeeAsync(editingId, {
+          name: form.name.trim(),
+          email: form.email.trim(),
+          pin: form.pin,
+          role: form.role,
+          departmentId: form.departmentId,
+          positionId: form.positionId,
+          locationId: form.locationId,
+        });
+        showToast("Employee updated.");
+      } else {
+        await addEmployeeAsync({
+          name: form.name.trim(),
+          email: form.email.trim(),
+          pin: form.pin,
+          role: form.role,
+          departmentId: form.departmentId,
+          positionId: form.positionId,
+          locationId: form.locationId,
+          status: "active",
+        });
+        showToast("Employee added.");
+      }
+    } catch {
+      showToast("Error saving employee.");
     }
     refreshState();
     setModalOpen(false);
   }
 
-  function handleToggleStatus(emp: Employee) {
-    if (emp.status === "active") {
-      disableEmployee(emp.id);
-      showToast(`${emp.name} disabled.`);
-    } else {
-      updateEmployee(emp.id, { status: "active" });
-      showToast(`${emp.name} re-enabled.`);
+  async function handleToggleStatus(emp: Employee) {
+    try {
+      if (emp.status === "active") {
+        await disableEmployeeAsync(emp.id);
+        showToast(`${emp.name} disabled.`);
+      } else {
+        await updateEmployeeAsync(emp.id, { status: "active" });
+        showToast(`${emp.name} re-enabled.`);
+      }
+    } catch {
+      showToast("Error updating employee status.");
     }
     refreshState();
   }

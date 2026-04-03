@@ -4,10 +4,15 @@ import { useState, useEffect } from "react";
 import PortalShell from "@/components/portal/PortalShell";
 import { usePortal } from "@/lib/portal-context";
 import {
-  updateDepartments,
-  updatePositions,
-  updateLocations,
-} from "@/lib/portal-store";
+  updateDepartments as updateDepartmentsAsync,
+  updatePositions as updatePositionsAsync,
+  updateLocations as updateLocationsAsync,
+  deleteDepartment as deleteDepartmentAsync,
+  deletePosition as deletePositionAsync,
+  deleteLocation as deleteLocationAsync,
+  getConfig,
+  setConfig,
+} from "@/lib/supabase-store";
 import type { Department, Position, Location } from "@/lib/portal-types";
 import {
   ShieldAlert,
@@ -58,8 +63,9 @@ export default function ConfigPage() {
   const [confirmDeleteLoc, setConfirmDeleteLoc] = useState<string | null>(null);
 
   useEffect(() => {
-    const stored = localStorage.getItem("hydra-training-code");
-    if (stored) setTrainingCode(stored);
+    getConfig("training_access_code").then((val) => {
+      if (val) setTrainingCode(val);
+    }).catch(() => {});
   }, []);
 
   function showToast(msg: string) {
@@ -68,12 +74,16 @@ export default function ConfigPage() {
   }
 
   // --- Training Code ---
-  function handleSaveCode() {
+  async function handleSaveCode() {
     if (!codeInput.trim()) return;
-    localStorage.setItem("hydra-training-code", codeInput.trim());
-    setTrainingCode(codeInput.trim());
-    setEditingCode(false);
-    showToast("Access code updated.");
+    try {
+      await setConfig("training_access_code", codeInput.trim());
+      setTrainingCode(codeInput.trim());
+      setEditingCode(false);
+      showToast("Access code updated.");
+    } catch {
+      showToast("Error updating access code.");
+    }
   }
 
   // --- Departments ---
@@ -89,7 +99,7 @@ export default function ConfigPage() {
     setDeptModalOpen(true);
   }
 
-  function handleSaveDept() {
+  async function handleSaveDept() {
     if (!deptForm.name.trim()) return;
     const depts = [...state.departments];
     if (editingDeptId) {
@@ -105,24 +115,31 @@ export default function ConfigPage() {
         color: deptForm.color,
       });
     }
-    updateDepartments(depts);
+    try {
+      await updateDepartmentsAsync(depts);
+      showToast(editingDeptId ? "Department updated." : "Department added.");
+    } catch {
+      showToast("Error saving department.");
+    }
     refreshState();
     setDeptModalOpen(false);
-    showToast(editingDeptId ? "Department updated." : "Department added.");
   }
 
-  function handleDeleteDept(id: string) {
+  async function handleDeleteDept(id: string) {
     const hasEmployees = state.employees.some((e) => e.departmentId === id && e.status === "active");
     if (hasEmployees) {
       showToast("Cannot delete: department has assigned employees.");
       setConfirmDeleteDept(null);
       return;
     }
-    const depts = state.departments.filter((d) => d.id !== id);
-    updateDepartments(depts);
+    try {
+      await deleteDepartmentAsync(id);
+      showToast("Department deleted.");
+    } catch {
+      showToast("Error deleting department.");
+    }
     refreshState();
     setConfirmDeleteDept(null);
-    showToast("Department deleted.");
   }
 
   // --- Positions ---
@@ -138,7 +155,7 @@ export default function ConfigPage() {
     setPosModalOpen(true);
   }
 
-  function handleSavePos() {
+  async function handleSavePos() {
     if (!posForm.name.trim() || !posForm.departmentId) return;
     const positions = [...state.positions];
     if (editingPosId) {
@@ -153,24 +170,31 @@ export default function ConfigPage() {
         departmentId: posForm.departmentId,
       });
     }
-    updatePositions(positions);
+    try {
+      await updatePositionsAsync(positions);
+      showToast(editingPosId ? "Position updated." : "Position added.");
+    } catch {
+      showToast("Error saving position.");
+    }
     refreshState();
     setPosModalOpen(false);
-    showToast(editingPosId ? "Position updated." : "Position added.");
   }
 
-  function handleDeletePos(id: string) {
+  async function handleDeletePos(id: string) {
     const hasEmployees = state.employees.some((e) => e.positionId === id && e.status === "active");
     if (hasEmployees) {
       showToast("Cannot delete: position has assigned employees.");
       setConfirmDeletePos(null);
       return;
     }
-    const positions = state.positions.filter((p) => p.id !== id);
-    updatePositions(positions);
+    try {
+      await deletePositionAsync(id);
+      showToast("Position deleted.");
+    } catch {
+      showToast("Error deleting position.");
+    }
     refreshState();
     setConfirmDeletePos(null);
-    showToast("Position deleted.");
   }
 
   // --- Locations ---
@@ -186,7 +210,7 @@ export default function ConfigPage() {
     setLocModalOpen(true);
   }
 
-  function handleSaveLoc() {
+  async function handleSaveLoc() {
     if (!locForm.region.trim() || !locForm.address.trim()) return;
     const locations = [...state.locations];
     if (editingLocId) {
@@ -202,24 +226,31 @@ export default function ConfigPage() {
         phone: locForm.phone.trim(),
       });
     }
-    updateLocations(locations);
+    try {
+      await updateLocationsAsync(locations);
+      showToast(editingLocId ? "Location updated." : "Location added.");
+    } catch {
+      showToast("Error saving location.");
+    }
     refreshState();
     setLocModalOpen(false);
-    showToast(editingLocId ? "Location updated." : "Location added.");
   }
 
-  function handleDeleteLoc(id: string) {
+  async function handleDeleteLoc(id: string) {
     const hasEmployees = state.employees.some((e) => e.locationId === id && e.status === "active");
     if (hasEmployees) {
       showToast("Cannot delete: location has assigned employees.");
       setConfirmDeleteLoc(null);
       return;
     }
-    const locations = state.locations.filter((l) => l.id !== id);
-    updateLocations(locations);
+    try {
+      await deleteLocationAsync(id);
+      showToast("Location deleted.");
+    } catch {
+      showToast("Error deleting location.");
+    }
     refreshState();
     setConfirmDeleteLoc(null);
-    showToast("Location deleted.");
   }
 
   const deptColors = [

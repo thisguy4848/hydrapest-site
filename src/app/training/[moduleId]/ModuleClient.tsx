@@ -15,7 +15,7 @@ import {
   ChevronLeft,
   Lock,
 } from "lucide-react";
-import { loadTrainingModules } from "@/lib/training-store";
+import { fetchTrainingModules, getConfig } from "@/lib/supabase-store";
 import type { TrainingModule } from "@/lib/training-data";
 
 const STORAGE_KEY_AUTH = "hydra-training-auth";
@@ -31,16 +31,16 @@ export default function ModuleClient({ moduleId }: { moduleId: string }) {
 
   useEffect(() => {
     setMounted(true);
-    setModules(loadTrainingModules());
+    fetchTrainingModules().then(setModules).catch(() => {});
     const auth = localStorage.getItem(STORAGE_KEY_AUTH);
     if (auth === "true") setAuthenticated(true);
     const progress = localStorage.getItem(STORAGE_KEY_PROGRESS);
     if (progress) setCompletedModules(JSON.parse(progress));
   }, []);
 
-  function handleLogin(e: React.FormEvent) {
+  async function handleLogin(e: React.FormEvent) {
     e.preventDefault();
-    const code = localStorage.getItem("hydra-training-code") || "hydra2026";
+    const code = await getConfig("training_access_code") ?? "hydra2026";
     if (password === code) {
       setAuthenticated(true);
       localStorage.setItem(STORAGE_KEY_AUTH, "true");

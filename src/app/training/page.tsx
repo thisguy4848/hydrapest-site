@@ -20,7 +20,7 @@ import {
   User,
 } from "lucide-react";
 import { categories, type Category } from "@/lib/training-data";
-import { loadTrainingModules } from "@/lib/training-store";
+import { fetchTrainingModules, getConfig } from "@/lib/supabase-store";
 
 const categoryIcons: Record<Category, React.ElementType> = {
   Onboarding: Shield,
@@ -45,11 +45,11 @@ export default function TrainingPage() {
   const [searchQuery, setSearchQuery] = useState("");
   const [activeCategory, setActiveCategory] = useState<string>("All");
   const [mounted, setMounted] = useState(false);
-  const [modules, setModules] = useState<ReturnType<typeof loadTrainingModules>>([]);
+  const [modules, setModules] = useState<Awaited<ReturnType<typeof fetchTrainingModules>>>([]);
 
   useEffect(() => {
     setMounted(true);
-    setModules(loadTrainingModules());
+    fetchTrainingModules().then(setModules).catch(() => {});
     const auth = localStorage.getItem(STORAGE_KEY_AUTH);
     if (auth === "true") setAuthenticated(true);
     const name = localStorage.getItem(STORAGE_KEY_NAME);
@@ -58,9 +58,9 @@ export default function TrainingPage() {
     if (progress) setCompletedModules(JSON.parse(progress));
   }, []);
 
-  function handleLogin(e: React.FormEvent) {
+  async function handleLogin(e: React.FormEvent) {
     e.preventDefault();
-    const code = localStorage.getItem("hydra-training-code") || "hydra2026";
+    const code = await getConfig("training_access_code") ?? "hydra2026";
     if (password === code) {
       setAuthenticated(true);
       localStorage.setItem(STORAGE_KEY_AUTH, "true");

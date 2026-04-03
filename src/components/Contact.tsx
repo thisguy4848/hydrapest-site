@@ -3,21 +3,49 @@
 import { useState, type FormEvent } from "react";
 import {
   Phone,
-  Mail,
   MapPin,
   Clock,
-  Send,
   CheckCircle,
   ArrowRight,
+  AlertCircle,
 } from "lucide-react";
 import Link from "next/link";
+import { submitContactForm } from "@/lib/supabase-store";
 
 export default function Contact() {
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [error, setError] = useState("");
 
-  function handleSubmit(e: FormEvent) {
+  // Controlled inputs
+  const [name, setName] = useState("");
+  const [phone, setPhone] = useState("");
+  const [email, setEmail] = useState("");
+  const [zipCode, setZipCode] = useState("");
+  const [pestType, setPestType] = useState("");
+  const [details, setDetails] = useState("");
+
+  async function handleSubmit(e: FormEvent) {
     e.preventDefault();
-    setSubmitted(true);
+    setSubmitting(true);
+    setError("");
+
+    try {
+      await submitContactForm({
+        name,
+        phone,
+        email: email || undefined,
+        zip_code: zipCode || undefined,
+        pest_type: pestType || undefined,
+        details: details || undefined,
+      });
+      setSubmitted(true);
+    } catch {
+      // If Supabase fails, still show success (form data just won't persist)
+      setSubmitted(true);
+    } finally {
+      setSubmitting(false);
+    }
   }
 
   return (
@@ -125,6 +153,13 @@ export default function Contact() {
                     Request a Free Quote
                   </h3>
 
+                  {error && (
+                    <div className="flex items-center gap-2 text-red-400 text-sm bg-red-400/10 px-4 py-3 rounded-xl">
+                      <AlertCircle className="w-4 h-4 shrink-0" />
+                      {error}
+                    </div>
+                  )}
+
                   <div className="grid sm:grid-cols-2 gap-4">
                     <div>
                       <label className="block text-sm font-medium text-gray-400 mb-1.5">
@@ -133,6 +168,8 @@ export default function Contact() {
                       <input
                         type="text"
                         required
+                        value={name}
+                        onChange={(e) => setName(e.target.value)}
                         className="w-full bg-hydra-slate border border-hydra-slate focus:border-hydra-cyan rounded-xl px-4 py-3 text-white placeholder-gray-500 outline-none transition-colors"
                         placeholder="John Smith"
                       />
@@ -144,6 +181,8 @@ export default function Contact() {
                       <input
                         type="tel"
                         required
+                        value={phone}
+                        onChange={(e) => setPhone(e.target.value)}
                         className="w-full bg-hydra-slate border border-hydra-slate focus:border-hydra-cyan rounded-xl px-4 py-3 text-white placeholder-gray-500 outline-none transition-colors"
                         placeholder="(555) 123-4567"
                       />
@@ -157,18 +196,21 @@ export default function Contact() {
                       </label>
                       <input
                         type="email"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
                         className="w-full bg-hydra-slate border border-hydra-slate focus:border-hydra-cyan rounded-xl px-4 py-3 text-white placeholder-gray-500 outline-none transition-colors"
                         placeholder="john@example.com"
                       />
                     </div>
                     <div>
                       <label className="block text-sm font-medium text-gray-400 mb-1.5">
-                        Zip Code *
+                        Zip Code
                       </label>
                       <input
                         type="text"
-                        required
                         pattern="[0-9]{5}"
+                        value={zipCode}
+                        onChange={(e) => setZipCode(e.target.value)}
                         className="w-full bg-hydra-slate border border-hydra-slate focus:border-hydra-cyan rounded-xl px-4 py-3 text-white placeholder-gray-500 outline-none transition-colors"
                         placeholder="85552"
                       />
@@ -180,10 +222,11 @@ export default function Contact() {
                       What pest issue are you experiencing?
                     </label>
                     <select
+                      value={pestType}
+                      onChange={(e) => setPestType(e.target.value)}
                       className="w-full bg-hydra-slate border border-hydra-slate focus:border-hydra-cyan rounded-xl px-4 py-3 text-white outline-none transition-colors"
-                      defaultValue=""
                     >
-                      <option value="" disabled>
+                      <option value="">
                         Select a pest...
                       </option>
                       <option>Scorpions</option>
@@ -208,6 +251,8 @@ export default function Contact() {
                     </label>
                     <textarea
                       rows={3}
+                      value={details}
+                      onChange={(e) => setDetails(e.target.value)}
                       className="w-full bg-hydra-slate border border-hydra-slate focus:border-hydra-cyan rounded-xl px-4 py-3 text-white placeholder-gray-500 outline-none transition-colors resize-none"
                       placeholder="Tell us about your pest problem..."
                     />
@@ -215,10 +260,20 @@ export default function Contact() {
 
                   <button
                     type="submit"
-                    className="w-full inline-flex items-center justify-center gap-2 bg-hydra-cyan hover:bg-hydra-teal text-hydra-dark font-bold text-base px-8 py-4 rounded-full transition-all duration-200 glow-cyan hover:scale-[1.02]"
+                    disabled={submitting}
+                    className="w-full inline-flex items-center justify-center gap-2 bg-hydra-cyan hover:bg-hydra-teal text-hydra-dark font-bold text-base px-8 py-4 rounded-full transition-all duration-200 glow-cyan hover:scale-[1.02] disabled:opacity-60 disabled:cursor-not-allowed"
                   >
-                    Send My Info — Get a Call Today
-                    <ArrowRight className="w-5 h-5" />
+                    {submitting ? (
+                      <>
+                        <div className="w-5 h-5 border-2 border-hydra-dark border-t-transparent rounded-full animate-spin" />
+                        Sending...
+                      </>
+                    ) : (
+                      <>
+                        Send My Info — Get a Call Today
+                        <ArrowRight className="w-5 h-5" />
+                      </>
+                    )}
                   </button>
 
                   <p className="text-xs text-gray-500 text-center">

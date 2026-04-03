@@ -4,10 +4,10 @@ import { useState, useMemo } from "react";
 import PortalShell from "@/components/portal/PortalShell";
 import { usePortal } from "@/lib/portal-context";
 import {
-  addResource,
-  updateResource,
-  deleteResource,
-} from "@/lib/portal-store";
+  addResource as addResourceAsync,
+  updateResource as updateResourceAsync,
+  deleteResource as deleteResourceAsync,
+} from "@/lib/supabase-store";
 import type { Resource, ResourceType } from "@/lib/portal-types";
 import {
   FilePlus,
@@ -24,10 +24,6 @@ import {
   ShieldAlert,
   AlertTriangle,
 } from "lucide-react";
-
-function generateId(): string {
-  return `res-${Date.now()}-${Math.random().toString(36).slice(2, 6)}`;
-}
 
 const typeIcons: Record<ResourceType, typeof FileText> = {
   pdf: FileText,
@@ -129,7 +125,7 @@ export default function ResourcesPage() {
     setModalOpen(true);
   }
 
-  function handleSave() {
+  async function handleSave() {
     if (!form.title.trim() || !form.url.trim() || !form.categoryId) return;
 
     const tags = form.tags
@@ -138,51 +134,57 @@ export default function ResourcesPage() {
       .filter(Boolean);
     const now = new Date().toISOString();
 
-    if (editingId) {
-      updateResource(editingId, {
-        title: form.title.trim(),
-        description: form.description.trim(),
-        type: form.type,
-        url: form.url.trim(),
-        categoryId: form.categoryId,
-        tags,
-        assignedDepartments: form.assignedDepartments,
-        assignedPositions: form.assignedPositions,
-        requiredForOnboarding: form.requiredForOnboarding,
-        duration: form.duration || undefined,
-        fileSize: form.fileSize || undefined,
-        updatedAt: now,
-      });
-      showToast("Resource updated.");
-    } else {
-      const newRes: Resource = {
-        id: generateId(),
-        title: form.title.trim(),
-        description: form.description.trim(),
-        type: form.type,
-        url: form.url.trim(),
-        categoryId: form.categoryId,
-        tags,
-        assignedDepartments: form.assignedDepartments,
-        assignedPositions: form.assignedPositions,
-        requiredForOnboarding: form.requiredForOnboarding,
-        duration: form.duration || undefined,
-        fileSize: form.fileSize || undefined,
-        createdAt: now,
-        updatedAt: now,
-      };
-      addResource(newRes);
-      showToast("Resource added.");
+    try {
+      if (editingId) {
+        await updateResourceAsync(editingId, {
+          title: form.title.trim(),
+          description: form.description.trim(),
+          type: form.type,
+          url: form.url.trim(),
+          categoryId: form.categoryId,
+          tags,
+          assignedDepartments: form.assignedDepartments,
+          assignedPositions: form.assignedPositions,
+          requiredForOnboarding: form.requiredForOnboarding,
+          duration: form.duration || undefined,
+          fileSize: form.fileSize || undefined,
+          updatedAt: now,
+        });
+        showToast("Resource updated.");
+      } else {
+        await addResourceAsync({
+          title: form.title.trim(),
+          description: form.description.trim(),
+          type: form.type,
+          url: form.url.trim(),
+          categoryId: form.categoryId,
+          tags,
+          assignedDepartments: form.assignedDepartments,
+          assignedPositions: form.assignedPositions,
+          requiredForOnboarding: form.requiredForOnboarding,
+          duration: form.duration || undefined,
+          fileSize: form.fileSize || undefined,
+          createdAt: now,
+          updatedAt: now,
+        });
+        showToast("Resource added.");
+      }
+    } catch {
+      showToast("Error saving resource.");
     }
     refreshState();
     setModalOpen(false);
   }
 
-  function handleDelete(id: string) {
-    deleteResource(id);
+  async function handleDelete(id: string) {
+    try {
+      await deleteResourceAsync(id);
+      showToast("Resource deleted.");
+    } catch {
+      showToast("Error deleting resource.");
+    }
     refreshState();
     setConfirmDelete(null);
-    showToast("Resource deleted.");
   }
 
   function toggleDept(deptId: string) {

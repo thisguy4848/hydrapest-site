@@ -4,12 +4,11 @@ import { useState, useMemo, useEffect } from "react";
 import PortalShell from "@/components/portal/PortalShell";
 import { usePortal } from "@/lib/portal-context";
 import {
-  loadTrainingModules,
-  saveTrainingModules,
-  addTrainingModule,
-  updateTrainingModule,
-  deleteTrainingModule,
-} from "@/lib/training-store";
+  fetchTrainingModules,
+  addTrainingModule as addModuleAsync,
+  updateTrainingModule as updateModuleAsync,
+  deleteTrainingModule as deleteModuleAsync,
+} from "@/lib/supabase-store";
 import type { TrainingModule, TrainingResource } from "@/lib/training-data";
 import { categories } from "@/lib/training-data";
 import {
@@ -23,10 +22,6 @@ import {
   ShieldAlert,
   AlertTriangle,
 } from "lucide-react";
-
-function generateId(): string {
-  return `mod-${Date.now()}-${Math.random().toString(36).slice(2, 6)}`;
-}
 
 interface ModuleFormData {
   title: string;
@@ -62,11 +57,11 @@ export default function TrainingAdminPage() {
   const [toast, setToast] = useState("");
 
   useEffect(() => {
-    setModules(loadTrainingModules());
+    fetchTrainingModules().then(setModules).catch(() => {});
   }, []);
 
   function refreshModules() {
-    setModules(loadTrainingModules());
+    fetchTrainingModules().then(setModules).catch(() => {});
   }
 
   function showToast(msg: string) {
@@ -111,7 +106,7 @@ export default function TrainingAdminPage() {
     setModalOpen(true);
   }
 
-  function handleSave() {
+  async function handleSave() {
     if (!form.title.trim()) return;
 
     const takeaways = form.keyTakeaways
@@ -120,42 +115,48 @@ export default function TrainingAdminPage() {
       .filter(Boolean);
     const resources = form.resources.filter((r) => r.name.trim());
 
-    if (editingId) {
-      updateTrainingModule(editingId, {
-        title: form.title.trim(),
-        category: form.category,
-        description: form.description.trim(),
-        duration: form.duration.trim(),
-        videoUrl: form.videoUrl.trim(),
-        order: form.order,
-        keyTakeaways: takeaways,
-        resources,
-      });
-      showToast("Training module updated.");
-    } else {
-      const newMod: TrainingModule = {
-        id: generateId(),
-        title: form.title.trim(),
-        category: form.category,
-        description: form.description.trim(),
-        duration: form.duration.trim(),
-        videoUrl: form.videoUrl.trim(),
-        order: form.order,
-        keyTakeaways: takeaways,
-        resources,
-      };
-      addTrainingModule(newMod);
-      showToast("Training module added.");
+    try {
+      if (editingId) {
+        await updateModuleAsync(editingId, {
+          title: form.title.trim(),
+          category: form.category,
+          description: form.description.trim(),
+          duration: form.duration.trim(),
+          videoUrl: form.videoUrl.trim(),
+          order: form.order,
+          keyTakeaways: takeaways,
+          resources,
+        });
+        showToast("Training module updated.");
+      } else {
+        await addModuleAsync({
+          title: form.title.trim(),
+          category: form.category,
+          description: form.description.trim(),
+          duration: form.duration.trim(),
+          videoUrl: form.videoUrl.trim(),
+          order: form.order,
+          keyTakeaways: takeaways,
+          resources,
+        });
+        showToast("Training module added.");
+      }
+    } catch {
+      showToast("Error saving module.");
     }
     refreshModules();
     setModalOpen(false);
   }
 
-  function handleDelete(id: string) {
-    deleteTrainingModule(id);
+  async function handleDelete(id: string) {
+    try {
+      await deleteModuleAsync(id);
+      showToast("Training module deleted.");
+    } catch {
+      showToast("Error deleting module.");
+    }
     refreshModules();
     setConfirmDelete(null);
-    showToast("Training module deleted.");
   }
 
   function addResource() {
