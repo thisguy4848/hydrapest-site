@@ -10,6 +10,7 @@ import {
   GraduationCap,
   Users,
   FolderPlus,
+  Settings,
   LogOut,
   Menu,
   X,
@@ -25,6 +26,8 @@ const mainNav = [
 const adminNav = [
   { href: "/portal/admin/employees", label: "Manage Employees", icon: Users },
   { href: "/portal/admin/resources", label: "Manage Resources", icon: FolderPlus },
+  { href: "/portal/admin/training", label: "Manage Training", icon: GraduationCap },
+  { href: "/portal/admin/config", label: "Configuration", icon: Settings },
 ];
 
 const roleBadgeColors: Record<string, string> = {

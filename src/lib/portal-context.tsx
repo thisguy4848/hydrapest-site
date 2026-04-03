@@ -126,6 +126,7 @@ export function PortalProvider({ children }: { children: ReactNode }) {
 
   const getAssignedResources = useCallback(() => {
     if (!currentUser) return state.resources;
+    if (currentUser.role === "admin" || currentUser.role === "manager") return state.resources;
     return state.resources.filter((r) => {
       if (r.assignedDepartments.length === 0) return true;
       return r.assignedDepartments.includes(currentUser.departmentId);
@@ -140,6 +141,9 @@ export function PortalProvider({ children }: { children: ReactNode }) {
       employees: fresh.employees.length > 1 ? fresh.employees : seed.employees,
       completions: fresh.completions ?? [],
       resources: fresh.resources.length > 0 ? fresh.resources : seed.resources,
+      departments: fresh.departments.length > 0 ? fresh.departments : seed.departments,
+      positions: fresh.positions.length > 0 ? fresh.positions : seed.positions,
+      locations: fresh.locations.length > 0 ? fresh.locations : seed.locations,
     };
     setState(merged);
     if (currentUser) {

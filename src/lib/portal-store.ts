@@ -5,6 +5,9 @@ import {
   Employee,
   Resource,
   CompletionRecord,
+  Department,
+  Position,
+  Location,
 } from "./portal-types";
 import { getInitialState } from "./portal-data";
 
@@ -147,6 +150,27 @@ export function authenticate(
   if (!employee) return null;
   if (employee.status === "disabled") return null;
   return employee;
+}
+
+export function updateDepartments(departments: Department[]): PortalState {
+  const state = loadState();
+  state.departments = departments;
+  saveState(state);
+  return state;
+}
+
+export function updatePositions(positions: Position[]): PortalState {
+  const state = loadState();
+  state.positions = positions;
+  saveState(state);
+  return state;
+}
+
+export function updateLocations(locations: Location[]): PortalState {
+  const state = loadState();
+  state.locations = locations;
+  saveState(state);
+  return state;
 }
 
 export function resetState(): PortalState {

@@ -60,7 +60,8 @@ export default function TrainingPage() {
 
   function handleLogin(e: React.FormEvent) {
     e.preventDefault();
-    if (password === "hydra2026") {
+    const code = localStorage.getItem("hydra-training-code") || "hydra2026";
+    if (password === code) {
       setAuthenticated(true);
       localStorage.setItem(STORAGE_KEY_AUTH, "true");
       setPasswordError(false);
